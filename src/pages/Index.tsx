@@ -14,7 +14,7 @@ const Index = () => {
   });
 
   useEffect(() => {
-    const eventDate = new Date('2024-11-27T12:30:00');
+    const eventDate = new Date('2025-11-27T12:30:00');
     
     const timer = setInterval(() => {
       const now = new Date();
@@ -134,6 +134,26 @@ const Index = () => {
                 27 ноября, 12:30–18:00, Ангар Edwin Group<br />
                 Мастермайнд-формат без теории – всё для мгновенного результата
               </p>
+              
+              <div className="mb-8 flex justify-center gap-4 md:gap-8 flex-wrap">
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 min-w-[80px]">
+                  <div className="text-3xl md:text-4xl font-bold text-[#ffd700]">{timeLeft.days}</div>
+                  <div className="text-sm text-gray-300 uppercase">дней</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 min-w-[80px]">
+                  <div className="text-3xl md:text-4xl font-bold text-[#ffd700]">{timeLeft.hours}</div>
+                  <div className="text-sm text-gray-300 uppercase">часов</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 min-w-[80px]">
+                  <div className="text-3xl md:text-4xl font-bold text-[#ffd700]">{timeLeft.minutes}</div>
+                  <div className="text-sm text-gray-300 uppercase">минут</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 min-w-[80px]">
+                  <div className="text-3xl md:text-4xl font-bold text-[#ffd700]">{timeLeft.seconds}</div>
+                  <div className="text-sm text-gray-300 uppercase">секунд</div>
+                </div>
+              </div>
+
               <Button 
                 size="lg" 
                 className="bg-[#f24822] hover:bg-[#d63d1a] text-white text-lg px-12 py-6 rounded-full"
