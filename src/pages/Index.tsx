@@ -63,14 +63,8 @@ const Index = () => {
               >
                 <div className="absolute inset-0 flex items-center justify-center pt-12">
                   <div className="text-center px-16">
-                    <p className="text-xl font-serif text-[#5a4a3a] mb-2 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
-                      Ваш Билет на показ
-                    </p>
-                    <p className="text-xl font-serif text-[#5a4a3a] mb-2 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
-                      капсульной коллекции одежды
-                    </p>
-                    <p className="text-xl font-serif text-[#5a4a3a] leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
-                      «Я достаточно хороша!»
+                    <p className="text-2xl font-serif text-[#5a4a3a] leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
+                      Ваш билет на мастер майнд
                     </p>
                   </div>
                 </div>
