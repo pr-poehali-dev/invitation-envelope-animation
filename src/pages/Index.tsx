@@ -91,7 +91,7 @@ const Index = () => {
               <button
                 onClick={handleOpenEnvelope}
                 disabled={animating}
-                className={`relative w-full transition-all duration-1000 ease-out hover:scale-105 disabled:opacity-50 ${
+                className={`w-full transition-all duration-1000 ease-out hover:scale-105 disabled:opacity-50 ${
                   animating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
                 }`}
               >
@@ -100,25 +100,6 @@ const Index = () => {
                   alt="Конверт с приглашением" 
                   className="w-full h-auto"
                 />
-                
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[75%]">
-                  <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full flex items-center justify-center"
-                    style={{
-                      background: 'radial-gradient(circle at 30% 30%, #c45d6f 0%, #a84554 40%, #8b2f3d 100%)',
-                      boxShadow: '0 8px 20px rgba(139, 47, 61, 0.5), inset 0 -2px 8px rgba(0,0,0,0.3)'
-                    }}
-                  >
-                    <span className="text-white font-serif text-xs md:text-sm tracking-wider uppercase font-bold" 
-                      style={{ 
-                        fontFamily: 'Georgia, serif', 
-                        textShadow: '0 1px 3px rgba(0,0,0,0.5)',
-                        letterSpacing: '0.15em'
-                      }}>
-                      НАЖАТЬ
-                    </span>
-                    <div className="absolute inset-2 rounded-full border border-white/30"></div>
-                  </div>
-                </div>
               </button>
             </div>
           </div>
