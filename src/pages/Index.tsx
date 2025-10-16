@@ -50,44 +50,73 @@ const Index = () => {
       {!envelopeOpen && (
         <section className="h-screen flex items-center justify-center relative">
           <div className="text-center">
-            <div className="relative w-[400px] h-[500px] mx-auto mb-12">
+            <div className="relative w-[500px] h-[600px] mx-auto mb-12">
               <div 
-                className={`absolute left-0 right-0 h-[250px] bg-gradient-to-b from-amber-100 to-amber-200 border-4 border-amber-900 transition-all duration-1000 ease-out ${
-                  animating ? '-translate-y-[400px] opacity-0' : 'top-0'
+                className={`absolute left-0 right-0 h-[280px] bg-gradient-to-b from-[#d4c4a0] to-[#c9b88f] transition-all duration-1000 ease-out ${
+                  animating ? '-translate-y-[500px] opacity-0' : 'top-0'
                 }`}
                 style={{
-                  clipPath: 'polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%)'
+                  clipPath: 'polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%)',
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
                 }}
               >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-24 h-24 rounded-full bg-amber-900 flex items-center justify-center">
-                    <Icon name="Sparkles" size={48} className="text-amber-100" />
+                <div className="absolute inset-0 flex items-center justify-center pt-8">
+                  <div className="text-center px-12">
+                    <p className="text-lg font-serif text-[#8B4513] mb-3 leading-relaxed">
+                      ВАШ БИЛЕТ НА ПОКАЗ КАПСУЛЬНОЙ
+                    </p>
+                    <p className="text-lg font-serif text-[#8B4513] mb-3 leading-relaxed">
+                      КОЛЛЕКЦИИ ОДЕЖДЫ
+                    </p>
+                    <p className="text-lg font-serif text-[#8B4513] leading-relaxed">
+                      «Я ДОСТАТОЧНО ХОРОША!»
+                    </p>
                   </div>
                 </div>
               </div>
 
               <div 
-                className={`absolute left-0 right-0 h-[250px] bg-gradient-to-t from-amber-100 to-amber-200 border-4 border-amber-900 transition-all duration-1000 ease-out ${
-                  animating ? 'translate-y-[400px] opacity-0' : 'bottom-0'
+                className={`absolute left-0 right-0 h-[320px] bg-gradient-to-t from-[#d4c4a0] to-[#c9b88f] transition-all duration-1000 ease-out ${
+                  animating ? 'translate-y-[500px] opacity-0' : 'bottom-0'
                 }`}
+                style={{
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+                }}
               >
-                <div className="absolute inset-0 flex items-center justify-center pt-12">
-                  <div className="text-center px-8">
-                    <p className="text-2xl font-bold text-amber-900 mb-2">ПРИГЛАШЕНИЕ</p>
-                    <p className="text-sm text-amber-800">на показ коллекции</p>
+                <div className="absolute inset-0 flex items-center justify-center pb-16">
+                  <div className="text-center px-12">
+                    <p className="text-base font-serif text-[#8B4513] mb-2 leading-relaxed">
+                      НАМ ОЧЕНЬ ЦЕННО, ЧТО
+                    </p>
+                    <p className="text-base font-serif text-[#8B4513] mb-2 leading-relaxed">
+                      ВЫ РАЗДЕЛИТЕ С НАМИ
+                    </p>
+                    <p className="text-base font-serif text-[#8B4513] leading-relaxed">
+                      ЭТО СОБЫТИЕ!
+                    </p>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <Button 
-              onClick={handleOpenEnvelope}
-              size="lg"
-              disabled={animating}
-              className="bg-amber-900 text-white hover:bg-amber-800 text-xl px-16 py-8 font-bold tracking-wider shadow-2xl transform transition-all hover:scale-105"
-            >
-              {animating ? 'ОТКРЫВАЕМ...' : 'НАЖМИТЕ'}
-            </Button>
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                <button
+                  onClick={handleOpenEnvelope}
+                  disabled={animating}
+                  className="relative w-32 h-32 rounded-full bg-gradient-to-br from-[#8B2635] to-[#6B1F2A] shadow-2xl transform transition-all hover:scale-110 disabled:opacity-50 border-4 border-[#6B1F2A]"
+                  style={{
+                    boxShadow: '0 8px 20px rgba(139, 38, 53, 0.4), inset 0 2px 10px rgba(255,255,255,0.2)'
+                  }}
+                >
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-white font-serif text-sm tracking-wider">
+                      {animating ? 'ОТКРЫВАЕМ' : 'НАЖМИТЕ'}
+                    </span>
+                  </div>
+                  <div className="absolute inset-2 rounded-full border border-white/30"></div>
+                  <div className="absolute inset-4 rounded-full border border-white/20"></div>
+                </button>
+              </div>
+            </div>
           </div>
         </section>
       )}
