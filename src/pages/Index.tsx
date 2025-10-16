@@ -88,33 +88,19 @@ const Index = () => {
         <section className="h-screen flex items-center justify-center relative z-10">
           <div className="text-center w-full max-w-4xl mx-auto px-4">
             <div className="relative w-full max-w-3xl mx-auto">
-              <img 
-                src="https://cdn.poehali.dev/files/a2e04557-1822-4a0c-9898-0c17c9d33cc6.jpg" 
-                alt="Конверт с приглашением" 
-                className={`w-full h-auto transition-all duration-1000 ease-out ${
+              <button
+                onClick={handleOpenEnvelope}
+                disabled={animating}
+                className={`w-full transition-all duration-1000 ease-out hover:scale-105 disabled:opacity-50 ${
                   animating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
                 }`}
-              />
-              
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                <button
-                  onClick={handleOpenEnvelope}
-                  disabled={animating}
-                  className="relative w-32 h-32 md:w-40 md:h-40 rounded-full transform transition-all hover:scale-110 disabled:opacity-50"
-                  style={{
-                    background: 'radial-gradient(circle at 30% 30%, #c45d6f 0%, #a84554 40%, #8b2f3d 100%)',
-                    boxShadow: '0 12px 30px rgba(139, 47, 61, 0.4), 0 6px 12px rgba(0,0,0,0.2), inset 0 -2px 8px rgba(0,0,0,0.3), inset 0 2px 8px rgba(255,255,255,0.2)'
-                  }}
-                >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-white font-serif text-sm md:text-base tracking-[0.2em] uppercase" style={{ fontFamily: 'Georgia, serif', textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>
-                      {animating ? 'Открываем' : 'Нажать'}
-                    </span>
-                  </div>
-                  <div className="absolute inset-3 rounded-full border border-white/20"></div>
-                  <div className="absolute inset-6 rounded-full border border-white/10"></div>
-                </button>
-              </div>
+              >
+                <img 
+                  src="https://cdn.poehali.dev/files/7a046b8c-0092-487e-aa5f-4da445a32ed7.png" 
+                  alt="Конверт с приглашением" 
+                  className="w-full h-auto"
+                />
+              </button>
             </div>
           </div>
         </section>
