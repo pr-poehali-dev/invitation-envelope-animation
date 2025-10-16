@@ -309,8 +309,15 @@ const Index = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <Card className="p-6 border-2 border-[#1a2253]/10 hover:border-[#f24822] hover:shadow-xl transition-all bg-white">
                   <div className="mb-4">
-                    <div className="w-full h-48 bg-gradient-to-br from-[#1a2253]/10 to-[#f24822]/10 rounded-lg flex items-center justify-center mb-4">
-                      <Icon name="Instagram" size={64} className="text-[#f24822]" />
+                    <div className="w-full flex justify-center mb-6">
+                      <img 
+                        src="https://cdn.poehali.dev/files/d871c23e-0268-4b76-a213-6b8ec333c078.jpg" 
+                        alt="Ирина Пашко" 
+                        className="w-32 h-32 rounded-full object-cover shadow-lg"
+                        style={{
+                          boxShadow: '0 10px 30px rgba(26, 34, 83, 0.3), 0 5px 15px rgba(242, 72, 34, 0.2)'
+                        }}
+                      />
                     </div>
                     <h3 className="text-lg font-bold text-[#1a2253] mb-3">
                       Система ведения сторис (ИГ, ТГ, ВК, статусы) - как использовать на максимум топовый инструмент соцсетей
