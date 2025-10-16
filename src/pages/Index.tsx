@@ -168,6 +168,113 @@ const Index = () => {
             </div>
           </section>
 
+          <section className="py-20 px-4 bg-white">
+            <div className="container mx-auto max-w-6xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-[#1a2253]">Программа мероприятия</h2>
+              <div className="space-y-8">
+                <div className="flex gap-6 items-start">
+                  <div className="flex-shrink-0 w-24 text-right">
+                    <span className="text-3xl font-bold text-[#f24822]">12:30</span>
+                  </div>
+                  <div className="flex-1">
+                    <Card className="p-6 border-2 border-[#1a2253]/10 hover:border-[#f24822] transition-all">
+                      <p className="text-lg mb-6 text-[#333333]">
+                        Сбор гостей, приветственный фуршет, съемки с профессиональным фотографом, розыгрыши подарков, нетворкинг
+                      </p>
+                      <div className="space-y-4">
+                        <div className="flex gap-4">
+                          <Icon name="User" size={24} className="text-[#f24822] flex-shrink-0" />
+                          <div>
+                            <p className="font-bold text-[#1a2253]">Елена Дулицкая</p>
+                            <p className="text-sm text-gray-600">Владелица студии OBRAZ, автор интенсива "Партнерская сеть", куратор сообщества "Код публичности" г. Владивосток, федеральный спикер</p>
+                          </div>
+                        </div>
+                        <div className="flex gap-4">
+                          <Icon name="User" size={24} className="text-[#f24822] flex-shrink-0" />
+                          <div>
+                            <p className="font-bold text-[#1a2253]">Екатерина Медникова</p>
+                            <p className="text-sm text-gray-600">Эксперт по продажам и продвижению в соцсетях, продюсер крупных онлайн-школ, автор практикума «Смыслы на миллион», научный сотрудник РАН, куратор сообщества "Код публичности" г. Иркутск, федеральный спикер</p>
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  </div>
+                </div>
+
+                <div className="flex gap-6 items-start">
+                  <div className="flex-shrink-0 w-24 text-right">
+                    <span className="text-3xl font-bold text-[#f24822]">14:00</span>
+                  </div>
+                  <div className="flex-1">
+                    <Card className="p-6 border-2 border-[#1a2253]/10 hover:border-[#f24822] transition-all">
+                      <p className="text-lg text-[#333333]">Работа с экспертами на станциях</p>
+                    </Card>
+                  </div>
+                </div>
+
+                <div className="flex gap-6 items-start">
+                  <div className="flex-shrink-0 w-24 text-right">
+                    <span className="text-3xl font-bold text-[#f24822]">14:40</span>
+                  </div>
+                  <div className="flex-1">
+                    <Card className="p-6 border-2 border-[#1a2253]/10 hover:border-[#f24822] transition-all">
+                      <p className="text-lg text-[#333333]">Фуршет</p>
+                    </Card>
+                  </div>
+                </div>
+
+                <div className="flex gap-6 items-start">
+                  <div className="flex-shrink-0 w-24 text-right">
+                    <span className="text-3xl font-bold text-[#f24822]">15:00</span>
+                  </div>
+                  <div className="flex-1">
+                    <Card className="p-6 border-2 border-[#1a2253]/10 hover:border-[#f24822] transition-all">
+                      <p className="text-lg mb-6 text-[#333333]">Работа с экспертами на станциях</p>
+                      <div className="space-y-4">
+                        <div className="flex gap-4">
+                          <Icon name="User" size={24} className="text-[#f24822] flex-shrink-0" />
+                          <div>
+                            <p className="font-bold text-[#1a2253]">Оксана Литвиненко</p>
+                            <p className="text-sm text-gray-600">Психолог, модератор сообщества «Код публичности»</p>
+                          </div>
+                        </div>
+                        <div className="flex gap-4">
+                          <Icon name="User" size={24} className="text-[#f24822] flex-shrink-0" />
+                          <div>
+                            <p className="font-bold text-[#1a2253]">Ирина Рамазанова</p>
+                            <p className="text-sm text-gray-600">Юрист для онлайн-бизнеса, модератор сообщества «Код публичности» Владивосток, федеральный спикер</p>
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  </div>
+                </div>
+
+                <div className="flex gap-6 items-start">
+                  <div className="flex-shrink-0 w-24 text-right">
+                    <span className="text-3xl font-bold text-[#f24822]">15:40</span>
+                  </div>
+                  <div className="flex-1">
+                    <Card className="p-6 border-2 border-[#1a2253]/10 hover:border-[#f24822] transition-all">
+                      <p className="text-lg text-[#333333]">Работа с экспертами на станциях</p>
+                    </Card>
+                  </div>
+                </div>
+
+                <div className="flex gap-6 items-start">
+                  <div className="flex-shrink-0 w-24 text-right">
+                    <span className="text-3xl font-bold text-[#f24822]">17:10</span>
+                  </div>
+                  <div className="flex-1">
+                    <Card className="p-6 border-2 border-[#1a2253]/10 hover:border-[#f24822] transition-all">
+                      <p className="text-lg text-[#333333]">Финал мероприятия</p>
+                    </Card>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <section className="py-20 px-4">
             <div className="container mx-auto max-w-5xl">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-[#1a2253]">
