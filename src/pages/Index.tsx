@@ -7,23 +7,27 @@ const Index = () => {
   const [envelopeOpen, setEnvelopeOpen] = useState(false);
   const [animating, setAnimating] = useState(false);
   const [timeLeft, setTimeLeft] = useState({
-    hours: 11,
-    minutes: 11,
-    seconds: 11
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
   });
 
   useEffect(() => {
+    const eventDate = new Date('2024-11-27T12:30:00');
+    
     const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 };
-        } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-        } else if (prev.hours > 0) {
-          return { hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        }
-        return prev;
-      });
+      const now = new Date();
+      const diff = eventDate.getTime() - now.getTime();
+      
+      if (diff > 0) {
+        setTimeLeft({
+          days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((diff % (1000 * 60)) / 1000)
+        });
+      }
     }, 1000);
 
     return () => clearInterval(timer);
@@ -36,17 +40,44 @@ const Index = () => {
     }, 1000);
   };
 
-  const programItems = [
-    { icon: 'User', text: 'Приветствие основателя и лидера сообщества Аны Мавричевой' },
-    { icon: 'Sparkles', text: 'Лекция стилистов о трендах осень – зима 25/26' },
-    { icon: 'Shirt', text: 'Показ капсульной коллекции' },
-    { icon: 'Users', text: 'Нетворкинг и консультации стилистов' },
-    { icon: 'ShoppingBag', text: 'Маркет с эксклюзивными коллекциями партнёров' },
-    { icon: 'Wine', text: 'Игристое вино и лёгкий фуршет' }
+  const benefits = [
+    { icon: 'Users', text: 'Четыре эксперт-станции на выбор с бронированием мест' },
+    { icon: 'MessageSquare', text: 'Фасилитация и мастермайнд-группы – готовые планы' },
+    { icon: 'Award', text: 'Модераторы – только проверенные спикеры' },
+    { icon: 'Laptop', text: 'Онлайн-тренинг «Как получить максимум пользы от нетворкинга»' },
+    { icon: 'Gift', text: 'Подарочный пакет и профессиональные фото' }
+  ];
+
+  const reviews = [
+    {
+      name: 'Анна Иванова',
+      role: 'Основатель проекта XYZ',
+      text: 'Нашла двух ключевых партнёров и запустила совместный продукт за неделю.'
+    },
+    {
+      name: 'Ольга Петрова',
+      role: 'Маркетолог',
+      text: 'Настолько структурированное общение я вижу впервые — результативная сессия!'
+    }
+  ];
+
+  const faq = [
+    {
+      q: 'Как выбрать станцию?',
+      a: 'Бронирование откроется 20 октября. Выберите 3 наилучших темы.'
+    },
+    {
+      q: 'Можно ли передать билет?',
+      a: 'Да, вы можете передать билет другому участнику до 24 ноября.'
+    },
+    {
+      q: 'Будет ли запись?',
+      a: 'Нет, формат закрытый для живого взаимодействия.'
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f5f0e8] via-[#ede3d6] to-[#e8ddd0] text-black overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-[#f5f5f5] via-white to-[#f5f5f5] text-[#333333] overflow-x-hidden">
       {!envelopeOpen && (
         <section className="h-screen flex items-center justify-center relative">
           <div className="text-center w-full max-w-4xl mx-auto px-4">
@@ -85,117 +116,227 @@ const Index = () => {
 
       {envelopeOpen && (
         <div className="animate-fade-in">
-          <header className="sticky top-0 bg-white/95 backdrop-blur-sm border-b border-amber-200 z-50 shadow-sm">
+          <header className="sticky top-0 bg-white/95 backdrop-blur-sm border-b border-[#1a2253]/10 z-50 shadow-sm">
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-              <div className="text-xl font-bold tracking-wider text-amber-900">КОД ПУБЛИЧНОСТИ</div>
+              <div className="text-xl font-bold tracking-wider text-[#1a2253]">КОД ПУБЛИЧНОСТИ</div>
               <Button 
                 variant="outline" 
-                className="border-amber-900 text-amber-900 hover:bg-amber-900 hover:text-white transition-colors"
-                onClick={() => window.open('https://maps.google.com/?q=Кутузовский просп., 36, стр. 5А', '_blank')}
+                className="border-[#1a2253] text-[#1a2253] hover:bg-[#1a2253] hover:text-white transition-colors"
+                onClick={() => window.open('https://maps.google.com/?q=Ангар Edwin Group', '_blank')}
               >
                 <Icon name="MapPin" className="mr-2" size={18} />
-                Открыть карту
+                Ангар Edwin Group
               </Button>
             </div>
           </header>
 
           <section className="py-24 px-4">
-            <div className="container mx-auto max-w-4xl text-center">
+            <div className="container mx-auto max-w-5xl text-center">
               <div className="mb-8">
-                <Icon name="Heart" size={64} className="mx-auto text-amber-900 mb-6" />
+                <Icon name="Sparkles" size={64} className="mx-auto text-[#f24822] mb-6" />
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-amber-950">
-                Нам очень ценно, что Вы разделите с нами это событие!
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-[#1a2253]">
+                Нетворкинг уровня PRO:<br />получи за 5 часов контакты на год вперёд
               </h1>
-              <p className="text-xl text-amber-800 font-light">
-                Ваш билет на показ капсульной коллекции одежды «Я достаточно хороша»
+              <p className="text-xl md:text-2xl text-[#333333] font-light mb-8">
+                27 ноября, 12:30–18:00, Ангар Edwin Group<br />
+                Мастермайнд-формат без теории – всё для мгновенного результата
               </p>
+              <Button 
+                size="lg" 
+                className="bg-[#f24822] hover:bg-[#d63d1a] text-white text-lg px-12 py-6 rounded-full"
+                onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Купить билет
+              </Button>
             </div>
           </section>
 
-          <section className="py-24 px-4 bg-gradient-to-br from-amber-900 to-amber-950 text-white">
-            <div className="container mx-auto max-w-4xl text-center">
-              <h2 className="text-6xl md:text-7xl font-extrabold mb-8 tracking-tight">
-                Я ДОСТАТОЧНО ХОРОША
+          <section className="py-20 px-4 bg-gradient-to-br from-[#1a2253] to-[#2a3565] text-white">
+            <div className="container mx-auto max-w-4xl">
+              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+                Ты тратишь часы на встречи, но связи не приносят пользы
               </h2>
-              <p className="text-xl md:text-2xl font-light leading-relaxed mb-6">
-                В вещах коллекции «Я достаточно хороша» очень удобно, красиво и счастливо жить свою жизнь и просто быть собой!
+              <p className="text-lg md:text-xl text-center mb-8 text-white/90">
+                Встречи, где «поток визиток» не перерастает в реальные проекты. Контакты не превращаются в сделки, а время утекает.
               </p>
-              <div className="flex flex-wrap justify-center gap-4 mt-8">
-                <span className="px-6 py-2 border-2 border-white text-sm tracking-wider">СОЦИАЛЬНЫЙ ПРОЕКТ</span>
-                <span className="px-6 py-2 border-2 border-white text-sm tracking-wider">КОД ПУБЛИЧНОСТИ</span>
+              <div className="text-center">
+                <p className="text-2xl font-bold text-[#f24822]">
+                  73% участников сетевых мероприятий не доводят ни одного контакта до сделки
+                </p>
               </div>
             </div>
           </section>
 
-          <section className="py-24 px-4">
+          <section className="py-20 px-4">
             <div className="container mx-auto max-w-5xl">
-              <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-amber-950">ПРОГРАММА МЕРОПРИЯТИЯ</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-[#1a2253]">
+                Интенсив от «Код публичности»: максимум пользы за один день
+              </h2>
               <div className="grid md:grid-cols-2 gap-8">
-                {programItems.map((item, index) => (
-                  <Card key={index} className="p-8 border-2 border-amber-200 hover:border-amber-900 hover:shadow-lg transition-all bg-white/80 backdrop-blur-sm">
+                {benefits.map((item, index) => (
+                  <Card key={index} className="p-8 border-2 border-[#1a2253]/20 hover:border-[#f24822] hover:shadow-xl transition-all bg-white">
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0">
-                        <Icon name={item.icon} size={32} className="text-amber-900" />
+                        <Icon name={item.icon} size={32} className="text-[#f24822]" />
                       </div>
-                      <p className="text-lg leading-relaxed text-amber-950">{item.text}</p>
+                      <p className="text-lg leading-relaxed text-[#333333]">{item.text}</p>
                     </div>
+                  </Card>
+                ))}
+              </div>
+              <div className="text-center mt-12">
+                <p className="text-xl font-semibold text-[#1a2253]">
+                  Более 500 лидов и 15 партнёрских проектов за год от одного события
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="pricing" className="py-20 px-4 bg-gradient-to-br from-[#f5f5f5] to-white">
+            <div className="container mx-auto max-w-4xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#1a2253]">Тарифы</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                <Card className="p-8 border-2 border-[#1a2253]/20 hover:border-[#f24822] transition-all">
+                  <h3 className="text-2xl font-bold mb-4 text-[#1a2253]">Стандарт</h3>
+                  <p className="text-4xl font-bold mb-6 text-[#f24822]">6 000 ₽</p>
+                  <Button className="w-full bg-[#1a2253] hover:bg-[#2a3565] text-white">
+                    Купить билет
+                  </Button>
+                </Card>
+                
+                <Card className="p-8 border-2 border-[#f24822] shadow-xl transform scale-105">
+                  <div className="bg-[#f24822] text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
+                    Осталось 10 мест
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-[#1a2253]">VIP</h3>
+                  <p className="text-4xl font-bold mb-6 text-[#f24822]">10 500 ₽</p>
+                  <Button className="w-full bg-[#f24822] hover:bg-[#d63d1a] text-white">
+                    Купить VIP билет
+                  </Button>
+                </Card>
+                
+                <Card className="p-8 border-2 border-[#1a2253]/20 hover:border-[#f24822] transition-all">
+                  <h3 className="text-2xl font-bold mb-4 text-[#1a2253]">Иду с подружкой</h3>
+                  <p className="text-4xl font-bold mb-6 text-[#f24822]">10 800 ₽</p>
+                  <p className="text-sm text-gray-600 mb-4">2 билета</p>
+                  <Button className="w-full bg-[#1a2253] hover:bg-[#2a3565] text-white">
+                    Купить 2 билета
+                  </Button>
+                </Card>
+              </div>
+            </div>
+          </section>
+
+          <section className="py-20 px-4">
+            <div className="container mx-auto max-w-4xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#1a2253]">Отзывы участников</h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                {reviews.map((review, index) => (
+                  <Card key={index} className="p-8 bg-white border-2 border-[#1a2253]/10">
+                    <p className="text-lg mb-6 text-[#333333] italic">"{review.text}"</p>
+                    <div>
+                      <p className="font-bold text-[#1a2253]">{review.name}</p>
+                      <p className="text-sm text-gray-600">{review.role}</p>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+              <div className="text-center mt-12">
+                <p className="text-xl font-semibold text-[#1a2253]">1200+ участников, 300+ проектов</p>
+              </div>
+            </div>
+          </section>
+
+          <section className="py-20 px-4 bg-gradient-to-br from-[#1a2253] to-[#2a3565] text-white">
+            <div className="container mx-auto max-w-4xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Гарантии</h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="text-center p-8">
+                  <Icon name="Shield" size={48} className="mx-auto mb-4 text-[#f24822]" />
+                  <h3 className="text-xl font-bold mb-4">Гарантия полезности</h3>
+                  <p className="text-white/90">Не получишь ни одного инсайта — вернем 100% стоимости билета.</p>
+                </div>
+                <div className="text-center p-8">
+                  <Icon name="Lock" size={48} className="mx-auto mb-4 text-[#f24822]" />
+                  <h3 className="text-xl font-bold mb-4">Безопасная оплата</h3>
+                  <p className="text-white/90">SSL-сертификат и мгновенное подтверждение.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="py-20 px-4">
+            <div className="container mx-auto max-w-3xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#1a2253]">Частые вопросы</h2>
+              <div className="space-y-6">
+                {faq.map((item, index) => (
+                  <Card key={index} className="p-6 border-2 border-[#1a2253]/10 hover:border-[#f24822] transition-all">
+                    <h3 className="text-lg font-bold mb-3 text-[#1a2253]">{item.q}</h3>
+                    <p className="text-[#333333]">{item.a}</p>
                   </Card>
                 ))}
               </div>
             </div>
           </section>
 
-          <section className="py-24 px-4 bg-gradient-to-br from-amber-50 to-orange-50">
+          <section className="py-20 px-4 bg-gradient-to-br from-[#f5f5f5] to-white">
             <div className="container mx-auto max-w-3xl text-center">
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-amber-950">ДРЕСС-КОД</h2>
-              <div className="bg-gradient-to-br from-black to-gray-900 text-white py-12 px-8 shadow-2xl">
-                <p className="text-6xl font-extrabold tracking-widest mb-4">TOTAL BLACK</p>
-                <p className="text-2xl font-light">стиль: деловой</p>
-              </div>
-            </div>
-          </section>
-
-          <section className="py-24 px-4">
-            <div className="container mx-auto max-w-3xl text-center">
-              <h2 className="text-3xl font-bold mb-12 text-amber-950">До начала показа осталось</h2>
-              <div className="flex flex-wrap justify-center gap-6">
+              <h2 className="text-3xl font-bold mb-8 text-[#1a2253]">До начала мероприятия осталось</h2>
+              <div className="flex flex-wrap justify-center gap-4">
+                {timeLeft.days > 0 && (
+                  <div className="text-center">
+                    <div className="text-5xl md:text-6xl font-bold border-4 border-[#1a2253] bg-white px-6 py-4 min-w-[100px] shadow-lg text-[#1a2253]">
+                      {String(timeLeft.days).padStart(2, '0')}
+                    </div>
+                    <p className="text-lg mt-3 font-semibold text-[#333333]">ДНЕЙ</p>
+                  </div>
+                )}
                 <div className="text-center">
-                  <div className="text-6xl md:text-7xl font-bold border-4 border-amber-900 bg-white px-8 py-6 min-w-[120px] shadow-lg text-amber-950">
+                  <div className="text-5xl md:text-6xl font-bold border-4 border-[#1a2253] bg-white px-6 py-4 min-w-[100px] shadow-lg text-[#1a2253]">
                     {String(timeLeft.hours).padStart(2, '0')}
                   </div>
-                  <p className="text-xl mt-4 font-semibold text-amber-900">ЧАСОВ</p>
+                  <p className="text-lg mt-3 font-semibold text-[#333333]">ЧАСОВ</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-6xl md:text-7xl font-bold border-4 border-amber-900 bg-white px-8 py-6 min-w-[120px] shadow-lg text-amber-950">
+                  <div className="text-5xl md:text-6xl font-bold border-4 border-[#1a2253] bg-white px-6 py-4 min-w-[100px] shadow-lg text-[#1a2253]">
                     {String(timeLeft.minutes).padStart(2, '0')}
                   </div>
-                  <p className="text-xl mt-4 font-semibold text-amber-900">МИНУТ</p>
+                  <p className="text-lg mt-3 font-semibold text-[#333333]">МИНУТ</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-6xl md:text-7xl font-bold border-4 border-amber-900 bg-white px-8 py-6 min-w-[120px] shadow-lg text-amber-950">
+                  <div className="text-5xl md:text-6xl font-bold border-4 border-[#1a2253] bg-white px-6 py-4 min-w-[100px] shadow-lg text-[#1a2253]">
                     {String(timeLeft.seconds).padStart(2, '0')}
                   </div>
-                  <p className="text-xl mt-4 font-semibold text-amber-900">СЕКУНД</p>
+                  <p className="text-lg mt-3 font-semibold text-[#333333]">СЕКУНД</p>
                 </div>
               </div>
             </div>
           </section>
 
-          <footer className="bg-gradient-to-br from-amber-900 to-amber-950 text-white py-12 px-4">
+          <footer className="bg-gradient-to-br from-[#1a2253] to-[#2a3565] text-white py-12 px-4">
             <div className="container mx-auto max-w-4xl">
               <div className="text-center space-y-6">
-                <p className="text-lg">© 2025 «Я достаточно хороша»</p>
-                <div className="flex justify-center gap-6">
-                  <a href="https://t.me/+QgiLIa1gFRY4Y2Iy" target="_blank" rel="noopener noreferrer" 
-                     className="hover:text-amber-200 transition-colors">
-                    <Icon name="Send" size={24} />
+                <div className="flex justify-center gap-8 flex-wrap">
+                  <a href="mailto:hello@kodpublichnosti-vl.ru" className="hover:text-[#f24822] transition-colors flex items-center gap-2">
+                    <Icon name="Mail" size={20} />
+                    hello@kodpublichnosti-vl.ru
                   </a>
-                  <a href="mailto:info@kodpublichnosti.ru" className="hover:text-amber-200 transition-colors">
-                    <Icon name="Mail" size={24} />
+                  <a href="https://t.me/kodpublichnosti_vl" target="_blank" rel="noopener noreferrer" 
+                     className="hover:text-[#f24822] transition-colors flex items-center gap-2">
+                    <Icon name="Send" size={20} />
+                    @kodpublichnosti_vl
+                  </a>
+                  <a href="tel:+74230000000" className="hover:text-[#f24822] transition-colors flex items-center gap-2">
+                    <Icon name="Phone" size={20} />
+                    +7 (423) 000-00-00
                   </a>
                 </div>
-                <p className="text-sm text-amber-100">Лофт The Portal • Кутузовский просп., 36, стр. 5А</p>
+                <div className="flex justify-center gap-6 text-sm">
+                  <a href="/privacy" className="hover:text-[#f24822] transition-colors">Политика конфиденциальности</a>
+                  <a href="/offer" className="hover:text-[#f24822] transition-colors">Публичная оферта</a>
+                </div>
+                <p className="text-sm text-white/70">© 2025 Код публичности</p>
               </div>
             </div>
           </footer>
