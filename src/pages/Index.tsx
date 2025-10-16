@@ -300,7 +300,125 @@ const Index = () => {
             </div>
           </section>
 
-          <section id="pricing" className="py-20 px-4 bg-gradient-to-br from-[#f5f5f5] to-white">
+          <section className="py-20 px-4 bg-gradient-to-br from-[#f5f5f5] to-white">
+            <div className="container mx-auto max-w-6xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-[#1a2253]">Станции с экспертами</h2>
+              <p className="text-center text-lg text-gray-600 mb-16">
+                Доступно три станции на выбор (бронирование мест начнется 20 октября)
+              </p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <Card className="p-6 border-2 border-[#1a2253]/10 hover:border-[#f24822] hover:shadow-xl transition-all bg-white">
+                  <div className="mb-4">
+                    <div className="w-full h-48 bg-gradient-to-br from-[#1a2253]/10 to-[#f24822]/10 rounded-lg flex items-center justify-center mb-4">
+                      <Icon name="Instagram" size={64} className="text-[#f24822]" />
+                    </div>
+                    <h3 className="text-lg font-bold text-[#1a2253] mb-3">
+                      Система ведения сторис (ИГ, ТГ, ВК, статусы) - как использовать на максимум топовый инструмент соцсетей
+                    </h3>
+                  </div>
+                  <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
+                    <Icon name="User" size={40} className="text-[#f24822]" />
+                    <div>
+                      <p className="font-bold text-[#1a2253]">Ирина Пашко</p>
+                      <p className="text-sm text-gray-600">Фотограф, контент-креатор для экспертов и бизнеса</p>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-6 border-2 border-[#1a2253]/10 hover:border-[#f24822] hover:shadow-xl transition-all bg-white">
+                  <div className="mb-4">
+                    <div className="w-full h-48 bg-gradient-to-br from-[#1a2253]/10 to-[#f24822]/10 rounded-lg flex items-center justify-center mb-4">
+                      <Icon name="Mic" size={64} className="text-[#f24822]" />
+                    </div>
+                    <h3 className="text-lg font-bold text-[#1a2253] mb-3">
+                      Красивая речь и объёмный голос - основа личного бренда
+                    </h3>
+                  </div>
+                  <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
+                    <Icon name="User" size={40} className="text-[#f24822]" />
+                    <div>
+                      <p className="font-bold text-[#1a2253]">Анастасия Резникова</p>
+                      <p className="text-sm text-gray-600">Тренер по речи, голосу и публичным выступлениям</p>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-6 border-2 border-[#1a2253]/10 hover:border-[#f24822] hover:shadow-xl transition-all bg-white">
+                  <div className="mb-4">
+                    <div className="w-full h-48 bg-gradient-to-br from-[#1a2253]/10 to-[#f24822]/10 rounded-lg flex items-center justify-center mb-4">
+                      <Icon name="Eye" size={64} className="text-[#f24822]" />
+                    </div>
+                    <h3 className="text-lg font-bold text-[#1a2253] mb-3">
+                      «Кривое зеркало» - как мы видим себя и других через фильтры, которые мешают проявляться
+                    </h3>
+                  </div>
+                  <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
+                    <Icon name="User" size={40} className="text-[#f24822]" />
+                    <div>
+                      <p className="font-bold text-[#1a2253]">Елена Мозер</p>
+                      <p className="text-sm text-gray-600">Коуч, наставник, автор трансформационных игр и метафорических карт</p>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-6 border-2 border-[#1a2253]/10 hover:border-[#f24822] hover:shadow-xl transition-all bg-white">
+                  <div className="mb-4">
+                    <div className="w-full h-48 bg-gradient-to-br from-[#1a2253]/10 to-[#f24822]/10 rounded-lg flex items-center justify-center mb-4">
+                      <Icon name="TrendingUp" size={64} className="text-[#f24822]" />
+                    </div>
+                    <h3 className="text-lg font-bold text-[#1a2253] mb-3">
+                      Переход на новый уровень дохода
+                    </h3>
+                  </div>
+                  <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
+                    <Icon name="User" size={40} className="text-[#f24822]" />
+                    <div>
+                      <p className="font-bold text-[#1a2253]">Оксана Литвиненко</p>
+                      <p className="text-sm text-gray-600">Психолог</p>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-6 border-2 border-[#1a2253]/10 hover:border-[#f24822] hover:shadow-xl transition-all bg-white">
+                  <div className="mb-4">
+                    <div className="w-full h-48 bg-gradient-to-br from-[#1a2253]/10 to-[#f24822]/10 rounded-lg flex items-center justify-center mb-4">
+                      <Icon name="Brain" size={64} className="text-[#f24822]" />
+                    </div>
+                    <h3 className="text-lg font-bold text-[#1a2253] mb-3">
+                      Синдром самозванца — неочевидный взгляд
+                    </h3>
+                  </div>
+                  <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
+                    <Icon name="User" size={40} className="text-[#f24822]" />
+                    <div>
+                      <p className="font-bold text-[#1a2253]">Яна Глушан</p>
+                      <p className="text-sm text-gray-600">Магистр психологии, расстановщик</p>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="p-6 border-2 border-[#1a2253]/10 hover:border-[#f24822] hover:shadow-xl transition-all bg-white">
+                  <div className="mb-4">
+                    <div className="w-full h-48 bg-gradient-to-br from-[#1a2253]/10 to-[#f24822]/10 rounded-lg flex items-center justify-center mb-4">
+                      <Icon name="MessageCircle" size={64} className="text-[#f24822]" />
+                    </div>
+                    <h3 className="text-lg font-bold text-[#1a2253] mb-3">
+                      Как запускать осознанно сарафанное радио
+                    </h3>
+                  </div>
+                  <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
+                    <Icon name="User" size={40} className="text-[#f24822]" />
+                    <div>
+                      <p className="font-bold text-[#1a2253]">Кристина Кузнецова</p>
+                      <p className="text-sm text-gray-600">Эксперт в сфере клиентского сервиса и продаж, автор системы «ДНК Клиента»</p>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            </div>
+          </section>
+
+          <section id="pricing" className="py-20 px-4 bg-white">
             <div className="container mx-auto max-w-4xl">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#1a2253]">Тарифы</h2>
               <div className="grid md:grid-cols-3 gap-6">
