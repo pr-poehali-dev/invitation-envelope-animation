@@ -383,8 +383,15 @@ const Index = () => {
 
                 <Card className="p-6 bg-white/10 backdrop-blur-sm border-2 border-white/20 hover:border-[#f24822] hover:shadow-xl transition-all">
                   <div className="mb-4">
-                    <div className="w-full h-48 bg-gradient-to-br from-white/5 to-[#f24822]/10 rounded-lg flex items-center justify-center mb-4">
-                      <Icon name="TrendingUp" size={64} className="text-[#f24822]" />
+                    <div className="w-full flex justify-center mb-6">
+                      <img 
+                        src="https://cdn.poehali.dev/files/e49b5917-df98-4d3b-ad10-87f4ff570d87.jpg" 
+                        alt="Оксана Литвиненко" 
+                        className="w-32 h-32 rounded-full object-cover shadow-lg"
+                        style={{
+                          boxShadow: '0 10px 30px rgba(26, 34, 83, 0.3), 0 5px 15px rgba(242, 72, 34, 0.2)'
+                        }}
+                      />
                     </div>
                     <h3 className="text-lg font-bold text-white mb-3">
                       Переход на новый уровень дохода
