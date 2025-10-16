@@ -5,6 +5,7 @@ import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [envelopeOpen, setEnvelopeOpen] = useState(false);
+  const [animating, setAnimating] = useState(false);
   const [timeLeft, setTimeLeft] = useState({
     hours: 11,
     minutes: 11,
@@ -28,6 +29,13 @@ const Index = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const handleOpenEnvelope = () => {
+    setAnimating(true);
+    setTimeout(() => {
+      setEnvelopeOpen(true);
+    }, 1000);
+  };
+
   const programItems = [
     { icon: 'User', text: 'Приветствие основателя и лидера сообщества Аны Мавричевой' },
     { icon: 'Sparkles', text: 'Лекция стилистов о трендах осень – зима 25/26' },
@@ -38,60 +46,83 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-black">
-      {/* Header */}
-      <header className="fixed top-0 w-full bg-white border-b border-gray-200 z-50">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="text-xl font-bold tracking-wider">КОД ПУБЛИЧНОСТИ</div>
-          <Button 
-            variant="outline" 
-            className="border-black text-black hover:bg-black hover:text-white transition-colors"
-            onClick={() => window.open('https://maps.google.com/?q=Кутузовский просп., 36, стр. 5А', '_blank')}
-          >
-            <Icon name="MapPin" className="mr-2" size={18} />
-            Открыть карту
-          </Button>
-        </div>
-      </header>
-
-      {/* Envelope Animation Section */}
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-orange-50 text-black overflow-x-hidden">
       {!envelopeOpen && (
-        <section className="h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-50">
+        <section className="h-screen flex items-center justify-center relative">
           <div className="text-center">
-            <div className="relative w-64 h-64 mx-auto mb-8">
-              <div className="absolute inset-0 bg-black border-4 border-black"></div>
-              <div className="absolute inset-2 bg-white flex items-center justify-center">
-                <Icon name="Mail" size={80} className="text-black" />
+            <div className="relative w-[400px] h-[500px] mx-auto mb-12">
+              <div 
+                className={`absolute left-0 right-0 h-[250px] bg-gradient-to-b from-amber-100 to-amber-200 border-4 border-amber-900 transition-all duration-1000 ease-out ${
+                  animating ? '-translate-y-[400px] opacity-0' : 'top-0'
+                }`}
+                style={{
+                  clipPath: 'polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%)'
+                }}
+              >
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-24 h-24 rounded-full bg-amber-900 flex items-center justify-center">
+                    <Icon name="Sparkles" size={48} className="text-amber-100" />
+                  </div>
+                </div>
+              </div>
+
+              <div 
+                className={`absolute left-0 right-0 h-[250px] bg-gradient-to-t from-amber-100 to-amber-200 border-4 border-amber-900 transition-all duration-1000 ease-out ${
+                  animating ? 'translate-y-[400px] opacity-0' : 'bottom-0'
+                }`}
+              >
+                <div className="absolute inset-0 flex items-center justify-center pt-12">
+                  <div className="text-center px-8">
+                    <p className="text-2xl font-bold text-amber-900 mb-2">ПРИГЛАШЕНИЕ</p>
+                    <p className="text-sm text-amber-800">на показ коллекции</p>
+                  </div>
+                </div>
               </div>
             </div>
+
             <Button 
-              onClick={() => setEnvelopeOpen(true)}
+              onClick={handleOpenEnvelope}
               size="lg"
-              className="bg-black text-white hover:bg-gray-800 text-lg px-12 py-6 font-semibold"
+              disabled={animating}
+              className="bg-amber-900 text-white hover:bg-amber-800 text-xl px-16 py-8 font-bold tracking-wider shadow-2xl transform transition-all hover:scale-105"
             >
-              НАЖМИТЕ
+              {animating ? 'ОТКРЫВАЕМ...' : 'НАЖМИТЕ'}
             </Button>
           </div>
         </section>
       )}
 
-      {/* Main Content */}
       {envelopeOpen && (
-        <div className="pt-24 animate-fade-in">
-          {/* Welcome Section */}
-          <section className="py-20 px-4">
+        <div className="animate-fade-in">
+          <header className="sticky top-0 bg-white/95 backdrop-blur-sm border-b border-amber-200 z-50 shadow-sm">
+            <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+              <div className="text-xl font-bold tracking-wider text-amber-900">КОД ПУБЛИЧНОСТИ</div>
+              <Button 
+                variant="outline" 
+                className="border-amber-900 text-amber-900 hover:bg-amber-900 hover:text-white transition-colors"
+                onClick={() => window.open('https://maps.google.com/?q=Кутузовский просп., 36, стр. 5А', '_blank')}
+              >
+                <Icon name="MapPin" className="mr-2" size={18} />
+                Открыть карту
+              </Button>
+            </div>
+          </header>
+
+          <section className="py-24 px-4">
             <div className="container mx-auto max-w-4xl text-center">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight">
+              <div className="mb-8">
+                <Icon name="Heart" size={64} className="mx-auto text-amber-900 mb-6" />
+              </div>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-amber-950">
                 Нам очень ценно, что Вы разделите с нами это событие!
               </h1>
-              <p className="text-xl text-gray-600 font-light">
+              <p className="text-xl text-amber-800 font-light">
                 Ваш билет на показ капсульной коллекции одежды «Я достаточно хороша»
               </p>
             </div>
           </section>
 
-          {/* About Collection */}
-          <section className="py-20 px-4 bg-black text-white">
+          <section className="py-24 px-4 bg-gradient-to-br from-amber-900 to-amber-950 text-white">
             <div className="container mx-auto max-w-4xl text-center">
               <h2 className="text-6xl md:text-7xl font-extrabold mb-8 tracking-tight">
                 Я ДОСТАТОЧНО ХОРОША
@@ -106,18 +137,17 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Program Section */}
-          <section className="py-20 px-4">
+          <section className="py-24 px-4">
             <div className="container mx-auto max-w-5xl">
-              <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">ПРОГРАММА МЕРОПРИЯТИЯ</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-amber-950">ПРОГРАММА МЕРОПРИЯТИЯ</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 {programItems.map((item, index) => (
-                  <Card key={index} className="p-8 border-2 border-black hover:bg-gray-50 transition-colors">
+                  <Card key={index} className="p-8 border-2 border-amber-200 hover:border-amber-900 hover:shadow-lg transition-all bg-white/80 backdrop-blur-sm">
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0">
-                        <Icon name={item.icon} size={32} className="text-black" />
+                        <Icon name={item.icon} size={32} className="text-amber-900" />
                       </div>
-                      <p className="text-lg leading-relaxed">{item.text}</p>
+                      <p className="text-lg leading-relaxed text-amber-950">{item.text}</p>
                     </div>
                   </Card>
                 ))}
@@ -125,59 +155,56 @@ const Index = () => {
             </div>
           </section>
 
-          {/* Dress Code */}
-          <section className="py-20 px-4 bg-gray-50">
+          <section className="py-24 px-4 bg-gradient-to-br from-amber-50 to-orange-50">
             <div className="container mx-auto max-w-3xl text-center">
-              <h2 className="text-4xl md:text-5xl font-bold mb-8">ДРЕСС-КОД</h2>
-              <div className="bg-black text-white py-12 px-8">
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-amber-950">ДРЕСС-КОД</h2>
+              <div className="bg-gradient-to-br from-black to-gray-900 text-white py-12 px-8 shadow-2xl">
                 <p className="text-6xl font-extrabold tracking-widest mb-4">TOTAL BLACK</p>
                 <p className="text-2xl font-light">стиль: деловой</p>
               </div>
             </div>
           </section>
 
-          {/* Timer */}
-          <section className="py-20 px-4">
+          <section className="py-24 px-4">
             <div className="container mx-auto max-w-3xl text-center">
-              <h2 className="text-3xl font-bold mb-12">До начала показа осталось</h2>
-              <div className="flex justify-center gap-8">
+              <h2 className="text-3xl font-bold mb-12 text-amber-950">До начала показа осталось</h2>
+              <div className="flex flex-wrap justify-center gap-6">
                 <div className="text-center">
-                  <div className="text-6xl md:text-7xl font-bold border-4 border-black px-8 py-6 min-w-[120px]">
+                  <div className="text-6xl md:text-7xl font-bold border-4 border-amber-900 bg-white px-8 py-6 min-w-[120px] shadow-lg text-amber-950">
                     {String(timeLeft.hours).padStart(2, '0')}
                   </div>
-                  <p className="text-xl mt-4 font-semibold">ЧАСОВ</p>
+                  <p className="text-xl mt-4 font-semibold text-amber-900">ЧАСОВ</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-6xl md:text-7xl font-bold border-4 border-black px-8 py-6 min-w-[120px]">
+                  <div className="text-6xl md:text-7xl font-bold border-4 border-amber-900 bg-white px-8 py-6 min-w-[120px] shadow-lg text-amber-950">
                     {String(timeLeft.minutes).padStart(2, '0')}
                   </div>
-                  <p className="text-xl mt-4 font-semibold">МИНУТ</p>
+                  <p className="text-xl mt-4 font-semibold text-amber-900">МИНУТ</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-6xl md:text-7xl font-bold border-4 border-black px-8 py-6 min-w-[120px]">
+                  <div className="text-6xl md:text-7xl font-bold border-4 border-amber-900 bg-white px-8 py-6 min-w-[120px] shadow-lg text-amber-950">
                     {String(timeLeft.seconds).padStart(2, '0')}
                   </div>
-                  <p className="text-xl mt-4 font-semibold">СЕКУНД</p>
+                  <p className="text-xl mt-4 font-semibold text-amber-900">СЕКУНД</p>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Footer */}
-          <footer className="bg-black text-white py-12 px-4">
+          <footer className="bg-gradient-to-br from-amber-900 to-amber-950 text-white py-12 px-4">
             <div className="container mx-auto max-w-4xl">
               <div className="text-center space-y-6">
                 <p className="text-lg">© 2025 «Я достаточно хороша»</p>
                 <div className="flex justify-center gap-6">
                   <a href="https://t.me/+QgiLIa1gFRY4Y2Iy" target="_blank" rel="noopener noreferrer" 
-                     className="hover:text-gray-300 transition-colors">
+                     className="hover:text-amber-200 transition-colors">
                     <Icon name="Send" size={24} />
                   </a>
-                  <a href="mailto:info@kodpublichnosti.ru" className="hover:text-gray-300 transition-colors">
+                  <a href="mailto:info@kodpublichnosti.ru" className="hover:text-amber-200 transition-colors">
                     <Icon name="Mail" size={24} />
                   </a>
                 </div>
-                <p className="text-sm text-gray-400">Лофт The Portal • Кутузовский просп., 36, стр. 5А</p>
+                <p className="text-sm text-amber-100">Лофт The Portal • Кутузовский просп., 36, стр. 5А</p>
               </div>
             </div>
           </footer>
