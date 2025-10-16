@@ -46,53 +46,52 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-orange-50 text-black overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-[#f5f0e8] via-[#ede3d6] to-[#e8ddd0] text-black overflow-x-hidden">
       {!envelopeOpen && (
         <section className="h-screen flex items-center justify-center relative">
           <div className="text-center">
-            <div className="relative w-[500px] h-[600px] mx-auto mb-12">
+            <div className="relative w-[600px] h-[700px] mx-auto">
               <div 
-                className={`absolute left-0 right-0 h-[280px] bg-gradient-to-b from-[#d4c4a0] to-[#c9b88f] transition-all duration-1000 ease-out ${
-                  animating ? '-translate-y-[500px] opacity-0' : 'top-0'
+                className={`absolute left-0 right-0 h-[320px] transition-all duration-1000 ease-out ${
+                  animating ? '-translate-y-[600px] opacity-0' : 'top-0'
                 }`}
                 style={{
-                  clipPath: 'polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%)',
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+                  clipPath: 'polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)',
+                  background: 'linear-gradient(135deg, #f0e6d6 0%, #e8dcc9 50%, #d9cbb8 100%)',
+                  boxShadow: animating ? 'none' : '0 15px 40px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.1)'
                 }}
               >
-                <div className="absolute inset-0 flex items-center justify-center pt-8">
-                  <div className="text-center px-12">
-                    <p className="text-lg font-serif text-[#8B4513] mb-3 leading-relaxed">
-                      ВАШ БИЛЕТ НА ПОКАЗ КАПСУЛЬНОЙ
+                <div className="absolute inset-0 flex items-center justify-center pt-12">
+                  <div className="text-center px-16">
+                    <p className="text-xl font-serif text-[#5a4a3a] mb-2 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
+                      Ваш Билет на показ
                     </p>
-                    <p className="text-lg font-serif text-[#8B4513] mb-3 leading-relaxed">
-                      КОЛЛЕКЦИИ ОДЕЖДЫ
+                    <p className="text-xl font-serif text-[#5a4a3a] mb-2 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
+                      капсульной коллекции одежды
                     </p>
-                    <p className="text-lg font-serif text-[#8B4513] leading-relaxed">
-                      «Я ДОСТАТОЧНО ХОРОША!»
+                    <p className="text-xl font-serif text-[#5a4a3a] leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
+                      «Я достаточно хороша!»
                     </p>
                   </div>
                 </div>
               </div>
 
               <div 
-                className={`absolute left-0 right-0 h-[320px] bg-gradient-to-t from-[#d4c4a0] to-[#c9b88f] transition-all duration-1000 ease-out ${
-                  animating ? 'translate-y-[500px] opacity-0' : 'bottom-0'
+                className={`absolute left-0 right-0 h-[380px] transition-all duration-1000 ease-out ${
+                  animating ? 'translate-y-[600px] opacity-0' : 'bottom-0'
                 }`}
                 style={{
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+                  background: 'linear-gradient(to top, #e8dcc9 0%, #f0e6d6 100%)',
+                  boxShadow: animating ? 'none' : '0 15px 40px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.1)'
                 }}
               >
-                <div className="absolute inset-0 flex items-center justify-center pb-16">
-                  <div className="text-center px-12">
-                    <p className="text-base font-serif text-[#8B4513] mb-2 leading-relaxed">
-                      НАМ ОЧЕНЬ ЦЕННО, ЧТО
+                <div className="absolute inset-0 flex items-center justify-center pb-24">
+                  <div className="text-center px-16">
+                    <p className="text-lg font-serif text-[#5a4a3a] mb-2 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
+                      Нам очень, шёлно,
                     </p>
-                    <p className="text-base font-serif text-[#8B4513] mb-2 leading-relaxed">
-                      ВЫ РАЗДЕЛИТЕ С НАМИ
-                    </p>
-                    <p className="text-base font-serif text-[#8B4513] leading-relaxed">
-                      ЭТО СОБЫТИЕ!
+                    <p className="text-lg font-serif text-[#5a4a3a] leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
+                      что вз разделите сно событие!
                     </p>
                   </div>
                 </div>
@@ -102,18 +101,19 @@ const Index = () => {
                 <button
                   onClick={handleOpenEnvelope}
                   disabled={animating}
-                  className="relative w-32 h-32 rounded-full bg-gradient-to-br from-[#8B2635] to-[#6B1F2A] shadow-2xl transform transition-all hover:scale-110 disabled:opacity-50 border-4 border-[#6B1F2A]"
+                  className="relative w-36 h-36 rounded-full transform transition-all hover:scale-110 disabled:opacity-50"
                   style={{
-                    boxShadow: '0 8px 20px rgba(139, 38, 53, 0.4), inset 0 2px 10px rgba(255,255,255,0.2)'
+                    background: 'radial-gradient(circle at 30% 30%, #c45d6f 0%, #a84554 40%, #8b2f3d 100%)',
+                    boxShadow: '0 12px 30px rgba(139, 47, 61, 0.4), 0 6px 12px rgba(0,0,0,0.2), inset 0 -2px 8px rgba(0,0,0,0.3), inset 0 2px 8px rgba(255,255,255,0.2)'
                   }}
                 >
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-white font-serif text-sm tracking-wider">
-                      {animating ? 'ОТКРЫВАЕМ' : 'НАЖМИТЕ'}
+                    <span className="text-white font-serif text-base tracking-[0.2em] uppercase" style={{ fontFamily: 'Georgia, serif', textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>
+                      {animating ? 'Открываем' : 'Нажмите'}
                     </span>
                   </div>
-                  <div className="absolute inset-2 rounded-full border border-white/30"></div>
-                  <div className="absolute inset-4 rounded-full border border-white/20"></div>
+                  <div className="absolute inset-3 rounded-full border border-white/20"></div>
+                  <div className="absolute inset-6 rounded-full border border-white/10"></div>
                 </button>
               </div>
             </div>
