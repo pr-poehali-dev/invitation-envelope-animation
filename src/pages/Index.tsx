@@ -49,61 +49,29 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-[#f5f0e8] via-[#ede3d6] to-[#e8ddd0] text-black overflow-x-hidden">
       {!envelopeOpen && (
         <section className="h-screen flex items-center justify-center relative">
-          <div className="text-center">
-            <div className="relative w-[600px] h-[700px] mx-auto">
-              <div 
-                className={`absolute left-0 right-0 h-[320px] transition-all duration-1000 ease-out ${
-                  animating ? '-translate-y-[600px] opacity-0' : 'top-0'
+          <div className="text-center w-full max-w-4xl mx-auto px-4">
+            <div className="relative w-full max-w-3xl mx-auto">
+              <img 
+                src="https://cdn.poehali.dev/files/a2e04557-1822-4a0c-9898-0c17c9d33cc6.jpg" 
+                alt="Конверт с приглашением" 
+                className={`w-full h-auto transition-all duration-1000 ease-out ${
+                  animating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
                 }`}
-                style={{
-                  clipPath: 'polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)',
-                  background: 'linear-gradient(135deg, #f0e6d6 0%, #e8dcc9 50%, #d9cbb8 100%)',
-                  boxShadow: animating ? 'none' : '0 15px 40px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.1)'
-                }}
-              >
-                <div className="absolute inset-0 flex items-center justify-center pt-12">
-                  <div className="text-center px-16">
-                    <p className="text-2xl font-serif text-[#5a4a3a] leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
-                      Ваш билет на мастер майнд
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div 
-                className={`absolute left-0 right-0 h-[380px] transition-all duration-1000 ease-out ${
-                  animating ? 'translate-y-[600px] opacity-0' : 'bottom-0'
-                }`}
-                style={{
-                  background: 'linear-gradient(to top, #e8dcc9 0%, #f0e6d6 100%)',
-                  boxShadow: animating ? 'none' : '0 15px 40px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.1)'
-                }}
-              >
-                <div className="absolute inset-0 flex items-center justify-center pb-24">
-                  <div className="text-center px-16">
-                    <p className="text-lg font-serif text-[#5a4a3a] mb-2 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
-                      Нам очень, шёлно,
-                    </p>
-                    <p className="text-lg font-serif text-[#5a4a3a] leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
-                      что вз разделите сно событие!
-                    </p>
-                  </div>
-                </div>
-              </div>
-
+              />
+              
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                 <button
                   onClick={handleOpenEnvelope}
                   disabled={animating}
-                  className="relative w-36 h-36 rounded-full transform transition-all hover:scale-110 disabled:opacity-50"
+                  className="relative w-32 h-32 md:w-40 md:h-40 rounded-full transform transition-all hover:scale-110 disabled:opacity-50"
                   style={{
                     background: 'radial-gradient(circle at 30% 30%, #c45d6f 0%, #a84554 40%, #8b2f3d 100%)',
                     boxShadow: '0 12px 30px rgba(139, 47, 61, 0.4), 0 6px 12px rgba(0,0,0,0.2), inset 0 -2px 8px rgba(0,0,0,0.3), inset 0 2px 8px rgba(255,255,255,0.2)'
                   }}
                 >
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-white font-serif text-base tracking-[0.2em] uppercase" style={{ fontFamily: 'Georgia, serif', textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>
-                      {animating ? 'Открываем' : 'Нажмите'}
+                    <span className="text-white font-serif text-sm md:text-base tracking-[0.2em] uppercase" style={{ fontFamily: 'Georgia, serif', textShadow: '0 1px 3px rgba(0,0,0,0.3)' }}>
+                      {animating ? 'Открываем' : 'Нажать'}
                     </span>
                   </div>
                   <div className="absolute inset-3 rounded-full border border-white/20"></div>
