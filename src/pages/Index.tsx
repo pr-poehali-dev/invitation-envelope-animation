@@ -237,8 +237,15 @@ const Index = () => {
                     <Card className="p-6 bg-white/10 backdrop-blur-sm border-2 border-white/20 hover:border-[#f24822] transition-all">
                       <p className="text-lg mb-6 text-gray-200">Работа с экспертами на станциях</p>
                       <div className="space-y-4">
-                        <div className="flex gap-4">
-                          <Icon name="User" size={24} className="text-[#f24822] flex-shrink-0" />
+                        <div className="flex gap-4 items-center">
+                          <img 
+                            src="https://cdn.poehali.dev/files/2ae092e5-c086-4238-be2c-94349f731d5c.jpg" 
+                            alt="Оксана Литвиненко" 
+                            className="w-16 h-16 rounded-full object-cover shadow-lg flex-shrink-0"
+                            style={{
+                              boxShadow: '0 10px 30px rgba(26, 34, 83, 0.3), 0 5px 15px rgba(242, 72, 34, 0.2)'
+                            }}
+                          />
                           <div>
                             <p className="font-bold text-white">Оксана Литвиненко</p>
                             <p className="text-sm text-gray-300">Психолог, модератор сообщества «Код публичности»</p>
