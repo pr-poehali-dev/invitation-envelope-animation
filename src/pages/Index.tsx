@@ -101,7 +101,14 @@ const Index = () => {
           }}></div>
           <div className="sticky-header py-4 mb-8" style={{background: 'rgba(123, 30, 30, 0.95)', backdropFilter: 'blur(10px)'}}>
             <div className="max-w-4xl mx-auto flex justify-between items-center px-4">
-              <h1 className="text-2xl font-bold" style={{fontFamily: 'Playfair Display, serif'}}>НЕТВОРКИНГ</h1>
+              <div className="flex flex-col items-start gap-3">
+                <h1 className="text-2xl font-bold" style={{fontFamily: 'Playfair Display, serif'}}>НЕТВОРКИНГ</h1>
+                <img 
+                  src="https://cdn.poehali.dev/files/0f9441d2-9e9a-466e-bde4-0c8aea109f17.jpg" 
+                  alt="Логотип" 
+                  className="w-16 h-16 object-contain"
+                />
+              </div>
               <a 
                 href="https://kodpublichnosti-vl.ru/networking" 
                 target="_blank"
