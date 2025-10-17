@@ -103,11 +103,13 @@ const Index = () => {
             <div className="max-w-4xl mx-auto flex justify-between items-center px-4">
               <h1 className="text-2xl font-bold" style={{fontFamily: 'Playfair Display, serif'}}>НЕТВОРКИНГ</h1>
               <a 
-                href="#registration" 
+                href="https://kodpublichnosti-vl.ru/networking" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-[#F3E8E0] text-[#7B1E1E] px-6 py-2 rounded-full font-bold hover:scale-105 transition-all text-sm"
                 style={{fontFamily: 'Lora, serif'}}
               >
-                Регистрация
+                Узнать подробнее
               </a>
             </div>
           </div>
