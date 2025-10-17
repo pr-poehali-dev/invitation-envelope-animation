@@ -33,11 +33,37 @@ const Index = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const handleOpenEnvelope = () => {
+  const handleOpenEnvelope = (e: React.MouseEvent<HTMLButtonElement>) => {
     setAnimating(true);
+    
+    const container = e.currentTarget;
+    const rect = container.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    const particleCount = 30;
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle-explosion';
+      
+      const angle = Math.random() * 2 * Math.PI;
+      const dist = Math.random() * 120 + 40;
+      const dx = Math.cos(angle) * dist;
+      const dy = Math.sin(angle) * dist;
+      
+      particle.style.setProperty('--dx', `${dx}px`);
+      particle.style.setProperty('--dy', `${dy}px`);
+      particle.style.left = `${centerX}px`;
+      particle.style.top = `${centerY}px`;
+      
+      document.body.appendChild(particle);
+      
+      setTimeout(() => particle.remove(), 800);
+    }
+    
     setTimeout(() => {
       setEnvelopeOpen(true);
-    }, 1000);
+    }, 400);
   };
 
   const benefits = [
