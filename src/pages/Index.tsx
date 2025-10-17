@@ -87,12 +87,12 @@ const Index = () => {
       {!envelopeOpen && (
         <section className="h-screen flex items-center justify-center relative z-10">
           <div className="text-center w-full max-w-4xl mx-auto px-4">
-            <div className="mb-8">
-              <div className="text-6xl md:text-8xl lg:text-9xl font-black text-[#ffd700] pulse-glow">
+            <div className="mb-8 relative z-50">
+              <div className="text-6xl md:text-8xl lg:text-9xl font-black text-[#ffd700] pulse-glow drop-shadow-2xl">
                 НАЖМИ
               </div>
             </div>
-            <div className="relative w-full max-w-3xl mx-auto">
+            <div className="relative w-full max-w-3xl mx-auto z-10">
               <button
                 onClick={handleOpenEnvelope}
                 disabled={animating}
