@@ -123,12 +123,6 @@ const Index = () => {
 
           <div className="max-w-4xl mx-auto relative z-10">
             <header className="text-center mb-16">
-              <img 
-                src="/lovable-uploads/4547df9b-34c5-6fed-b5cb-484a567cca5d.png" 
-                alt="Networking Event" 
-                className="w-full max-w-4xl mx-auto mb-8 rounded-lg shadow-2xl fade-in-up"
-                style={{animationDelay: '0.1s'}}
-              />
               <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight fade-in-down" style={{fontFamily: 'Playfair Display, serif', animationDelay: '0.2s'}}>
                 НЕТВОРКИНГ
               </h1>
