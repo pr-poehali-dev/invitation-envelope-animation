@@ -398,37 +398,6 @@ const Index = () => {
               </div>
             </section>
 
-            <section className="mb-16 bg-white/10 backdrop-blur-sm p-8 rounded-lg border-2 border-[#F3E8E0] fade-in" id="partner">
-              <h2 className="text-4xl font-black text-center mb-6" style={{fontFamily: 'Playfair Display, serif'}}>СТАТЬ ПАРТНЁРОМ МЕРОПРИЯТИЯ</h2>
-              <ul className="space-y-3 mb-8" style={{fontFamily: 'Lora, serif'}}>
-                <li className="flex items-center gap-3 fade-in-up" style={{animationDelay: '0.2s'}}>
-                  <Icon name="Megaphone" size={24} className="text-[#F3E8E0] flex-shrink-0" />
-                  <span className="text-lg">Увеличение узнаваемости бренда</span>
-                </li>
-                <li className="flex items-center gap-3 fade-in-up" style={{animationDelay: '0.3s'}}>
-                  <Icon name="Users" size={24} className="text-[#F3E8E0] flex-shrink-0" />
-                  <span className="text-lg">Прямой доступ к целевой аудитории</span>
-                </li>
-                <li className="flex items-center gap-3 fade-in-up" style={{animationDelay: '0.4s'}}>
-                  <Icon name="Handshake" size={24} className="text-[#F3E8E0] flex-shrink-0" />
-                  <span className="text-lg">Эксклюзивные нетворкинг-возможности</span>
-                </li>
-                <li className="flex items-center gap-3 fade-in-up" style={{animationDelay: '0.5s'}}>
-                  <Icon name="ChartBar" size={24} className="text-[#F3E8E0] flex-shrink-0" />
-                  <span className="text-lg">Маркетинговое сопровождение</span>
-                </li>
-              </ul>
-              <div className="text-center">
-                <a 
-                  href="#partner" 
-                  className="inline-block bg-[#F3E8E0] text-[#7B1E1E] px-10 py-4 rounded-full text-xl font-bold hover:scale-105 transition-all shadow-lg zoom-in"
-                  style={{fontFamily: 'Lora, serif', animationDelay: '0.6s'}}
-                >
-                  Стать партнёром
-                </a>
-              </div>
-            </section>
-
             <section className="mb-16 text-center fade-in" id="registration">
               <h2 className="text-4xl font-black mb-8" style={{fontFamily: 'Playfair Display, serif'}}>ЗАРЕГИСТРИРОВАТЬСЯ</h2>
               <p className="text-xl mb-8" style={{fontFamily: 'Lora, serif'}}>
