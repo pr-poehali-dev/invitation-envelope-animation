@@ -7,7 +7,9 @@ const RegistrationSection = () => {
           Количество мест ограничено. Успейте зарегистрироваться!
         </p>
         <a 
-          href="#registration" 
+          href="https://wa.me/79147043536" 
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block bg-[#F3E8E0] text-[#7B1E1E] px-12 py-4 rounded-full text-2xl font-bold hover:scale-105 transition-all shadow-lg zoom-in"
           style={{fontFamily: 'Lora, serif', animationDelay: '0.2s'}}
         >
