@@ -94,13 +94,18 @@ const Index = () => {
       )}
 
       {envelopeOpen && (
-        <div className="animate-fade-in relative z-10 min-h-screen kraft-page text-[#3d2817] py-12 px-4">
-          <div className="sticky-header py-4 mb-8">
+        <div className="animate-fade-in relative z-10 min-h-screen bg-gradient-to-br from-[#7B1E1E] via-[#5d1616] to-[#4A0F0F] text-[#F3E8E0] py-12 px-4">
+          <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20,50 Q30,30 40,50 T60,50 T80,50' stroke='%23F3E8E0' fill='none' stroke-width='0.5'/%3E%3Cpath d='M10,70 Q20,50 30,70 T50,70 T70,70' stroke='%23F3E8E0' fill='none' stroke-width='0.5'/%3E%3C/svg%3E")`,
+            backgroundSize: '100px 100px'
+          }}></div>
+          <div className="sticky-header py-4 mb-8" style={{background: 'rgba(123, 30, 30, 0.95)', backdropFilter: 'blur(10px)'}}>
             <div className="max-w-4xl mx-auto flex justify-between items-center px-4">
-              <h1 className="text-2xl font-bold text-[#8b4513]">НЕТВОРКИНГ</h1>
+              <h1 className="text-2xl font-bold" style={{fontFamily: 'Playfair Display, serif'}}>НЕТВОРКИНГ</h1>
               <a 
                 href="#registration" 
-                className="bg-[#8b4513] text-[#f5e6d3] px-6 py-2 rounded-full font-bold hover:bg-[#6d3410] transition-all text-sm"
+                className="bg-[#F3E8E0] text-[#7B1E1E] px-6 py-2 rounded-full font-bold hover:scale-105 transition-all text-sm"
+                style={{fontFamily: 'Lora, serif'}}
               >
                 Регистрация
               </a>
@@ -109,217 +114,310 @@ const Index = () => {
 
           <div className="max-w-4xl mx-auto relative z-10">
             <header className="text-center mb-16">
-              <h1 className="text-5xl md:text-7xl font-black mb-6 text-[#8b4513] tracking-tight">
+              <img 
+                src="/lovable-uploads/4547df9b-34c5-6fed-b5cb-484a567cca5d.png" 
+                alt="Networking Event" 
+                className="w-full max-w-4xl mx-auto mb-8 rounded-lg shadow-2xl fade-in-up"
+                style={{animationDelay: '0.1s'}}
+              />
+              <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight fade-in-down" style={{fontFamily: 'Playfair Display, serif', animationDelay: '0.2s'}}>
                 НЕТВОРКИНГ
               </h1>
-              <p className="text-2xl md:text-3xl font-semibold mb-8 text-[#5d3a1a]">
+              <p className="text-2xl md:text-3xl font-semibold mb-8 fade-in-up" style={{fontFamily: 'Lora, serif', animationDelay: '0.4s'}}>
                 Новый формат. Ты получишь больше инсайтов, чем ожидаешь!
               </p>
               <a 
                 href="#registration" 
-                className="inline-block bg-[#8b4513] text-[#f5e6d3] px-10 py-4 rounded-full text-xl font-bold hover:bg-[#6d3410] transition-all shadow-lg hover:shadow-xl"
+                className="inline-block bg-[#F3E8E0] text-[#7B1E1E] px-10 py-4 rounded-full text-xl font-bold hover:scale-105 transition-all shadow-lg zoom-in"
+                style={{fontFamily: 'Lora, serif', animationDelay: '0.6s'}}
               >
                 Зарегистрироваться
               </a>
             </header>
 
-            <div className="text-center mb-16 bg-[#c4b5a0]/50 p-8 rounded-lg shadow-md">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <Icon name="Calendar" size={36} className="text-[#F4B400] icon-bounce" />
-                <p className="text-2xl font-bold">27 ноября, 12:30 — 18:00</p>
+            <div className="text-center mb-16 bg-white/10 backdrop-blur-sm p-8 rounded-lg shadow-md">
+              <div className="flex items-center justify-center gap-3 mb-4 icon-bounce" style={{animationDelay: '0.1s'}}>
+                <Icon name="Calendar" size={36} className="text-[#F3E8E0]" />
+                <p className="text-2xl font-bold" style={{fontFamily: 'Lora, serif'}}>27 ноября, 12:30 — 18:00</p>
               </div>
-              <div className="flex items-center justify-center gap-3">
-                <Icon name="MapPin" size={36} className="text-[#0F9D58] icon-pulse" />
-                <p className="text-xl">Ангар Edwin Group</p>
+              <div className="flex items-center justify-center gap-3 icon-jello" style={{animationDelay: '0.2s'}}>
+                <Icon name="MapPin" size={36} className="text-[#F3E8E0]" />
+                <p className="text-xl" style={{fontFamily: 'Lora, serif'}}>Ангар Edwin Group</p>
               </div>
             </div>
 
-            <section className="mb-16">
-              <h2 className="text-4xl font-black text-center mb-10 text-[#8b4513]">ТЫ СМОЖЕШЬ</h2>
+            <section className="mb-16 fade-in" style={{animationDelay: '0.3s'}}>
+              <h2 className="text-4xl font-black text-center mb-10" style={{fontFamily: 'Playfair Display, serif'}}>ТЫ СМОЖЕШЬ</h2>
               <ul className="space-y-4">
-                <li className="flex items-start gap-3 bg-[#c4b5a0]/30 p-4 rounded-lg hover:bg-[#c4b5a0]/50 transition-all">
-                  <Icon name="Sparkles" size={24} className="text-[#F4B400] flex-shrink-0 mt-1" />
-                  <span className="text-lg">Вдохновиться историями обычных женщин и понять, что ты тоже так можешь!</span>
+                <li className="flex items-start gap-3 bg-white/10 backdrop-blur-sm p-4 rounded-lg hover:bg-white/20 transition-all fade-in-left" style={{animationDelay: '0.4s'}}>
+                  <Icon name="Heart" size={24} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                  <span className="text-lg" style={{fontFamily: 'Lora, serif'}}>Вдохновиться историями обычных женщин и понять, что ты тоже так можешь!</span>
                 </li>
-                <li className="flex items-start gap-3 bg-[#c4b5a0]/30 p-4 rounded-lg hover:bg-[#c4b5a0]/50 transition-all">
-                  <Icon name="Users" size={24} className="text-[#4285F4] flex-shrink-0 mt-1 icon-wave" />
-                  <span className="text-lg">Заявить о себе на большую аудиторию или сделать свой первый шаг из тени.</span>
+                <li className="flex items-start gap-3 bg-white/10 backdrop-blur-sm p-4 rounded-lg hover:bg-white/20 transition-all fade-in-left" style={{animationDelay: '0.5s'}}>
+                  <Icon name="Megaphone" size={24} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                  <span className="text-lg" style={{fontFamily: 'Lora, serif'}}>Заявить о себе на большую аудиторию или сделать свой первый шаг из тени.</span>
                 </li>
-                <li className="flex items-start gap-3 bg-[#c4b5a0]/30 p-4 rounded-lg hover:bg-[#c4b5a0]/50 transition-all">
-                  <Icon name="Network" size={24} className="text-[#0F9D58] flex-shrink-0 mt-1" />
-                  <span className="text-lg">Пополнить окружение десятками качественных контактов.</span>
+                <li className="flex items-start gap-3 bg-white/10 backdrop-blur-sm p-4 rounded-lg hover:bg-white/20 transition-all fade-in-right" style={{animationDelay: '0.4s'}}>
+                  <Icon name="Users" size={24} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                  <span className="text-lg" style={{fontFamily: 'Lora, serif'}}>Пополнить окружение десятками качественных контактов.</span>
                 </li>
-                <li className="flex items-start gap-3 bg-[#c4b5a0]/30 p-4 rounded-lg hover:bg-[#c4b5a0]/50 transition-all">
-                  <Icon name="Handshake" size={24} className="text-[#DB4437] flex-shrink-0 mt-1" />
-                  <span className="text-lg">Получить ценное предложение о сотрудничестве.</span>
+                <li className="flex items-start gap-3 bg-white/10 backdrop-blur-sm p-4 rounded-lg hover:bg-white/20 transition-all fade-in-right" style={{animationDelay: '0.5s'}}>
+                  <Icon name="Handshake" size={24} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                  <span className="text-lg" style={{fontFamily: 'Lora, serif'}}>Получить ценное предложение о сотрудничестве.</span>
                 </li>
-                <li className="flex items-start gap-3 bg-[#c4b5a0]/30 p-4 rounded-lg hover:bg-[#c4b5a0]/50 transition-all">
-                  <Icon name="Lightbulb" size={24} className="text-[#F4B400] flex-shrink-0 mt-1" />
-                  <span className="text-lg">Познакомиться с новыми инструментами и получить ценные осознания.</span>
+                <li className="flex items-start gap-3 bg-white/10 backdrop-blur-sm p-4 rounded-lg hover:bg-white/20 transition-all fade-in-left" style={{animationDelay: '0.6s'}}>
+                  <Icon name="Lightbulb" size={24} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                  <span className="text-lg" style={{fontFamily: 'Lora, serif'}}>Познакомиться с новыми инструментами и получить ценные осознания.</span>
                 </li>
-                <li className="flex items-start gap-3 bg-[#c4b5a0]/30 p-4 rounded-lg hover:bg-[#c4b5a0]/50 transition-all">
-                  <Icon name="Gift" size={24} className="text-[#DB4437] flex-shrink-0 mt-1 icon-rotate" />
-                  <span className="text-lg">Унести с собой много приятных подарков.</span>
+                <li className="flex items-start gap-3 bg-white/10 backdrop-blur-sm p-4 rounded-lg hover:bg-white/20 transition-all fade-in-right" style={{animationDelay: '0.6s'}}>
+                  <Icon name="Gift" size={24} className="text-[#F3E8E0] flex-shrink-0 mt-1 icon-rotate" />
+                  <span className="text-lg" style={{fontFamily: 'Lora, serif'}}>Унести с собой много приятных подарков.</span>
                 </li>
               </ul>
             </section>
 
-            <section className="mb-16">
-              <h2 className="text-4xl font-black text-center mb-10 text-[#8b4513]">У НАС ТОЧНО НЕТ</h2>
+            <section className="mb-16 fade-in" style={{animationDelay: '0.2s'}}>
+              <h2 className="text-4xl font-black text-center mb-10" style={{fontFamily: 'Playfair Display, serif'}}>У НАС ТОЧНО НЕТ</h2>
               <div className="space-y-6">
-                <div className="bg-[#c4b5a0]/30 p-6 rounded-lg border-l-4 border-[#8b4513]">
-                  <h3 className="text-2xl font-bold mb-2">Сторонних спикеров</h3>
-                  <p className="text-lg">Только наши лидеры — проверенные годами эксперты.</p>
+                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border-l-4 border-[#F3E8E0] fade-in-up" style={{animationDelay: '0.3s'}}>
+                  <div className="flex items-start gap-3">
+                    <Icon name="UserX" size={28} className="text-[#F3E8E0] flex-shrink-0" />
+                    <div>
+                      <h3 className="text-2xl font-bold mb-2" style={{fontFamily: 'Playfair Display, serif'}}>Сторонних спикеров</h3>
+                      <p className="text-lg" style={{fontFamily: 'Lora, serif'}}>Только наши лидеры — проверенные годами эксперты.</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-[#c4b5a0]/30 p-6 rounded-lg border-l-4 border-[#8b4513]">
-                  <h3 className="text-2xl font-bold mb-2">Скучной теории</h3>
-                  <p className="text-lg">Покажем понятные инструменты и будем работать с экспертами в моменте.</p>
+                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border-l-4 border-[#F3E8E0] fade-in-up" style={{animationDelay: '0.4s'}}>
+                  <div className="flex items-start gap-3">
+                    <Icon name="BookX" size={28} className="text-[#F3E8E0] flex-shrink-0" />
+                    <div>
+                      <h3 className="text-2xl font-bold mb-2" style={{fontFamily: 'Playfair Display, serif'}}>Скучной теории</h3>
+                      <p className="text-lg" style={{fontFamily: 'Lora, serif'}}>Покажем понятные инструменты и будем работать с экспертами в моменте.</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-[#c4b5a0]/30 p-6 rounded-lg border-l-4 border-[#8b4513]">
-                  <h3 className="text-2xl font-bold mb-2">Сложных знакомств</h3>
-                  <p className="text-lg">Только управляемый нетворкинг со специальными техниками, чтобы было легко и продуктивно.</p>
+                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border-l-4 border-[#F3E8E0] fade-in-up" style={{animationDelay: '0.5s'}}>
+                  <div className="flex items-start gap-3">
+                    <Icon name="Wand2" size={28} className="text-[#F3E8E0] flex-shrink-0" />
+                    <div>
+                      <h3 className="text-2xl font-bold mb-2" style={{fontFamily: 'Playfair Display, serif'}}>Сложных знакомств</h3>
+                      <p className="text-lg" style={{fontFamily: 'Lora, serif'}}>Только управляемый нетворкинг со специальными техниками, чтобы было легко и продуктивно.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
 
-            <section className="mb-16">
-              <h2 className="text-4xl font-black text-center mb-10 text-[#8b4513]">ПРОГРАММА</h2>
+            <section className="mb-16" id="program">
+              <h2 className="text-4xl font-black text-center mb-10" style={{fontFamily: 'Playfair Display, serif'}}>ПРОГРАММА</h2>
               
               <div className="mb-12 flex flex-wrap justify-center gap-4">
-                <div className="flex items-center gap-2 bg-[#4285F4]/10 px-4 py-2 rounded-full program-step step-fade-in">
-                  <Icon name="UserCheck" size={24} className="text-[#4285F4]" />
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full program-step step-fade-in" style={{fontFamily: 'Lora, serif'}}>
+                  <Icon name="UserCheck" size={24} className="text-[#F3E8E0]" />
                   <span className="font-semibold">Регистрация</span>
                 </div>
-                <div className="flex items-center gap-2 bg-[#0F9D58]/10 px-4 py-2 rounded-full program-step step-fade-in" style={{animationDelay: '0.1s'}}>
-                  <Icon name="Mic" size={24} className="text-[#0F9D58]" />
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full program-step step-fade-in" style={{animationDelay: '0.1s', fontFamily: 'Lora, serif'}}>
+                  <Icon name="Mic" size={24} className="text-[#F3E8E0]" />
                   <span className="font-semibold">Вступительное слово</span>
                 </div>
-                <div className="flex items-center gap-2 bg-[#F4B400]/10 px-4 py-2 rounded-full program-step step-fade-in" style={{animationDelay: '0.2s'}}>
-                  <Icon name="Users" size={24} className="text-[#F4B400] icon-wave" />
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full program-step step-fade-in" style={{animationDelay: '0.2s', fontFamily: 'Lora, serif'}}>
+                  <Icon name="Users" size={24} className="text-[#F3E8E0] icon-wave" />
                   <span className="font-semibold">Работа с экспертами</span>
                 </div>
-                <div className="flex items-center gap-2 bg-[#DB4437]/10 px-4 py-2 rounded-full program-step step-fade-in" style={{animationDelay: '0.3s'}}>
-                  <Icon name="Utensils" size={24} className="text-[#DB4437]" />
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full program-step step-fade-in" style={{animationDelay: '0.3s', fontFamily: 'Lora, serif'}}>
+                  <Icon name="Utensils" size={24} className="text-[#F3E8E0]" />
                   <span className="font-semibold">Фуршет</span>
                 </div>
-                <div className="flex items-center gap-2 bg-[#4285F4]/10 px-4 py-2 rounded-full program-step step-fade-in" style={{animationDelay: '0.4s'}}>
-                  <Icon name="Flag" size={24} className="text-[#4285F4]" />
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full program-step step-fade-in" style={{animationDelay: '0.4s', fontFamily: 'Lora, serif'}}>
+                  <Icon name="Flag" size={24} className="text-[#F3E8E0]" />
                   <span className="font-semibold">Завершение</span>
                 </div>
               </div>
 
               <div className="space-y-6">
-                <div className="bg-[#c4b5a0]/40 p-6 rounded-lg">
-                  <p className="text-2xl font-bold mb-4 text-[#8b4513]">12:30 – 14:00</p>
-                  <ul className="space-y-2 ml-4">
-                    <li>• Сбор гостей, приветственный фуршет</li>
-                    <li>• Съёмки с профессиональным фотографом</li>
-                    <li>• Розыгрыши подарков</li>
-                    <li>• Нетворкинг: Елена Дулицкая, Екатерина Медникова</li>
+                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg fade-in-left" style={{animationDelay: '0.2s'}}>
+                  <p className="text-2xl font-bold mb-4" style={{fontFamily: 'Playfair Display, serif'}}>12:30 – 14:00</p>
+                  <ul className="space-y-3" style={{fontFamily: 'Lora, serif'}}>
+                    <li className="flex items-start gap-3">
+                      <Icon name="Coffee" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                      <span>Сбор гостей, приветственный фуршет</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Icon name="Camera" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                      <span>Съёмки с профессиональным фотографом</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Icon name="Gift" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                      <span>Розыгрыши подарков</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Icon name="Users" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                      <span>Нетворкинг: Елена Дулицкая, Екатерина Медникова</span>
+                    </li>
                   </ul>
                 </div>
 
-                <div className="bg-[#c4b5a0]/40 p-6 rounded-lg">
-                  <p className="text-2xl font-bold mb-4 text-[#8b4513]">14:00 – 14:40</p>
-                  <p>Работа с экспертами на станциях</p>
+                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg fade-in-right" style={{animationDelay: '0.2s'}}>
+                  <p className="text-2xl font-bold mb-4" style={{fontFamily: 'Playfair Display, serif'}}>14:00 – 14:40</p>
+                  <div className="flex items-start gap-3">
+                    <Icon name="Settings" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                    <p style={{fontFamily: 'Lora, serif'}}>Работа с экспертами на станциях</p>
+                  </div>
                 </div>
 
-                <div className="bg-[#c4b5a0]/40 p-6 rounded-lg">
-                  <p className="text-2xl font-bold mb-4 text-[#8b4513]">14:40 – 15:00</p>
-                  <p>Фуршет</p>
+                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg fade-in-right" style={{animationDelay: '0.3s'}}>
+                  <p className="text-2xl font-bold mb-4" style={{fontFamily: 'Playfair Display, serif'}}>14:40 – 15:00</p>
+                  <div className="flex items-start gap-3">
+                    <Icon name="Utensils" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                    <p style={{fontFamily: 'Lora, serif'}}>Фуршет</p>
+                  </div>
                 </div>
 
-                <div className="bg-[#c4b5a0]/40 p-6 rounded-lg">
-                  <p className="text-2xl font-bold mb-4 text-[#8b4513]">15:00 – 17:10</p>
-                  <div className="space-y-4">
-                    <div className="border-l-2 border-[#8b4513] pl-4">
-                      <p className="font-bold text-lg">Оксана Литвиненко</p>
-                      <p className="text-sm mb-2 italic">Психолог</p>
-                      <p>Синдром самозванца — неочевидный взгляд</p>
+                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg fade-in-up">
+                  <p className="text-2xl font-bold mb-4" style={{fontFamily: 'Playfair Display, serif'}}>15:00 – 17:10</p>
+                  <div className="space-y-4" style={{fontFamily: 'Lora, serif'}}>
+                    <div className="border-l-2 border-[#F3E8E0] pl-4 fade-in-up" style={{animationDelay: '0.2s'}}>
+                      <div className="flex items-start gap-2">
+                        <Icon name="Brain" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                        <div>
+                          <p className="font-bold text-lg">Оксана Литвиненко</p>
+                          <p className="text-sm mb-2 italic opacity-80">Психолог</p>
+                          <p>Синдром самозванца — неочевидный взгляд</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="border-l-2 border-[#8b4513] pl-4">
-                      <p className="font-bold text-lg">Ирина Рамазанова</p>
-                      <p className="text-sm italic">Юрист для онлайн-бизнеса</p>
+                    <div className="border-l-2 border-[#F3E8E0] pl-4 fade-in-up" style={{animationDelay: '0.3s'}}>
+                      <div className="flex items-start gap-2">
+                        <Icon name="Scale" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                        <div>
+                          <p className="font-bold text-lg">Ирина Рамазанова</p>
+                          <p className="text-sm italic opacity-80">Юрист для онлайн-бизнеса</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="border-l-2 border-[#8b4513] pl-4">
-                      <p className="font-bold text-lg">Ирина Пашко</p>
-                      <p className="text-sm mb-2 italic">Фотограф, контент-креатор</p>
-                      <p>Красивая речь и объёмный голос — основа личного бренда</p>
+                    <div className="border-l-2 border-[#F3E8E0] pl-4 fade-in-up" style={{animationDelay: '0.4s'}}>
+                      <div className="flex items-start gap-2">
+                        <Icon name="Mic" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                        <div>
+                          <p className="font-bold text-lg">Ирина Пашко</p>
+                          <p className="text-sm mb-2 italic opacity-80">Фотограф, контент-креатор</p>
+                          <p>Красивая речь и объёмный голос — основа личного бренда</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="border-l-2 border-[#8b4513] pl-4">
-                      <p className="font-bold text-lg">Анастасия Резникова</p>
-                      <p className="text-sm mb-2 italic">Тренер по речи и публичным выступлениям</p>
-                      <p>"Кривое зеркало" — как мы видим себя и других через фильтры, которые мешают проявляться</p>
+                    <div className="border-l-2 border-[#F3E8E0] pl-4 fade-in-up" style={{animationDelay: '0.5s'}}>
+                      <div className="flex items-start gap-2">
+                        <Icon name="Mirror" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" fallback="Sparkles" />
+                        <div>
+                          <p className="font-bold text-lg">Анастасия Резникова</p>
+                          <p className="text-sm mb-2 italic opacity-80">Тренер по речи и публичным выступлениям</p>
+                          <p>"Кривое зеркало" — как мы видим себя и других через фильтры, которые мешают проявляться</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="border-l-2 border-[#8b4513] pl-4">
-                      <p className="font-bold text-lg">Елена Мозер</p>
-                      <p className="text-sm mb-2 italic">Коуч, автор трансформационных игр</p>
-                      <p>Переход на новый уровень дохода</p>
+                    <div className="border-l-2 border-[#F3E8E0] pl-4 fade-in-up" style={{animationDelay: '0.6s'}}>
+                      <div className="flex items-start gap-2">
+                        <Icon name="TrendingUp" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                        <div>
+                          <p className="font-bold text-lg">Елена Мозер</p>
+                          <p className="text-sm mb-2 italic opacity-80">Коуч, автор трансформационных игр</p>
+                          <p>Переход на новый уровень дохода</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="border-l-2 border-[#8b4513] pl-4">
-                      <p className="font-bold text-lg">Яна Глушан</p>
-                      <p className="text-sm mb-2 italic">Магистр психологии, расстановщик</p>
-                      <p>Как запускать осознано сарафанное радио</p>
+                    <div className="border-l-2 border-[#F3E8E0] pl-4 fade-in-up" style={{animationDelay: '0.7s'}}>
+                      <div className="flex items-start gap-2">
+                        <Icon name="Radio" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                        <div>
+                          <p className="font-bold text-lg">Яна Глушан</p>
+                          <p className="text-sm mb-2 italic opacity-80">Магистр психологии, расстановщик</p>
+                          <p>Как запускать осознано сарафанное радио</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="border-l-2 border-[#8b4513] pl-4">
-                      <p className="font-bold text-lg">Кристина Кузнецова</p>
-                      <p className="text-sm mb-2 italic">Эксперт по клиентскому сервису и продажам</p>
-                      <p>Система «ДНК Клиента»</p>
+                    <div className="border-l-2 border-[#F3E8E0] pl-4 fade-in-up" style={{animationDelay: '0.8s'}}>
+                      <div className="flex items-start gap-2">
+                        <Icon name="Dna" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                        <div>
+                          <p className="font-bold text-lg">Кристина Кузнецова</p>
+                          <p className="text-sm mb-2 italic opacity-80">Эксперт по клиентскому сервису и продажам</p>
+                          <p>Система «ДНК Клиента»</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-[#c4b5a0]/40 p-6 rounded-lg">
-                  <p className="text-2xl font-bold mb-4 text-[#8b4513]">17:10 – 17:30</p>
-                  <p>Финал мероприятия</p>
+                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg fade-in" style={{animationDelay: '0.2s'}}>
+                  <p className="text-2xl font-bold mb-4" style={{fontFamily: 'Playfair Display, serif'}}>17:10 – 17:30</p>
+                  <div className="flex items-start gap-3">
+                    <Icon name="FlagCheckered" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" fallback="Flag" />
+                    <p style={{fontFamily: 'Lora, serif'}}>Финал мероприятия</p>
+                  </div>
                 </div>
               </div>
             </section>
 
-            <section className="mb-16 bg-[#8b4513]/10 p-8 rounded-lg border-2 border-[#8b4513]">
-              <h2 className="text-4xl font-black text-center mb-6 text-[#8b4513]">СТАТЬ ПАРТНЁРОМ МЕРОПРИЯТИЯ</h2>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center gap-2">
-                  <span className="text-xl">★</span>
+            <section className="mb-16 bg-white/10 backdrop-blur-sm p-8 rounded-lg border-2 border-[#F3E8E0] fade-in" id="partner">
+              <h2 className="text-4xl font-black text-center mb-6" style={{fontFamily: 'Playfair Display, serif'}}>СТАТЬ ПАРТНЁРОМ МЕРОПРИЯТИЯ</h2>
+              <ul className="space-y-3 mb-8" style={{fontFamily: 'Lora, serif'}}>
+                <li className="flex items-center gap-3 fade-in-up" style={{animationDelay: '0.2s'}}>
+                  <Icon name="Megaphone" size={24} className="text-[#F3E8E0] flex-shrink-0" />
                   <span className="text-lg">Увеличение узнаваемости бренда</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-xl">★</span>
+                <li className="flex items-center gap-3 fade-in-up" style={{animationDelay: '0.3s'}}>
+                  <Icon name="Users" size={24} className="text-[#F3E8E0] flex-shrink-0" />
                   <span className="text-lg">Прямой доступ к целевой аудитории</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-xl">★</span>
+                <li className="flex items-center gap-3 fade-in-up" style={{animationDelay: '0.4s'}}>
+                  <Icon name="Handshake" size={24} className="text-[#F3E8E0] flex-shrink-0" />
                   <span className="text-lg">Эксклюзивные нетворкинг-возможности</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-xl">★</span>
+                <li className="flex items-center gap-3 fade-in-up" style={{animationDelay: '0.5s'}}>
+                  <Icon name="ChartBar" size={24} className="text-[#F3E8E0] flex-shrink-0" />
                   <span className="text-lg">Маркетинговое сопровождение</span>
                 </li>
               </ul>
               <div className="text-center">
                 <a 
                   href="#partner" 
-                  className="inline-block bg-[#8b4513] text-[#f5e6d3] px-10 py-4 rounded-full text-xl font-bold hover:bg-[#6d3410] transition-all shadow-lg"
+                  className="inline-block bg-[#F3E8E0] text-[#7B1E1E] px-10 py-4 rounded-full text-xl font-bold hover:scale-105 transition-all shadow-lg zoom-in"
+                  style={{fontFamily: 'Lora, serif', animationDelay: '0.6s'}}
                 >
                   Стать партнёром
                 </a>
               </div>
             </section>
 
-            <footer className="text-center pt-8 border-t-2 border-[#8b4513]/30">
+            <section className="mb-16 text-center fade-in" id="registration">
+              <h2 className="text-4xl font-black mb-8" style={{fontFamily: 'Playfair Display, serif'}}>ЗАРЕГИСТРИРОВАТЬСЯ</h2>
+              <p className="text-xl mb-8" style={{fontFamily: 'Lora, serif'}}>
+                Количество мест ограничено. Успейте зарегистрироваться!
+              </p>
+              <a 
+                href="#registration" 
+                className="inline-block bg-[#F3E8E0] text-[#7B1E1E] px-12 py-4 rounded-full text-2xl font-bold hover:scale-105 transition-all shadow-lg zoom-in"
+                style={{fontFamily: 'Lora, serif', animationDelay: '0.2s'}}
+              >
+                Забронировать место
+              </a>
+            </section>
+
+            <footer className="text-center pt-8 border-t-2 border-[#F3E8E0]/30" style={{background: 'rgba(123,30,30,0.4)', fontFamily: 'Lora, serif'}}>
               <div className="mb-6">
                 <p className="text-lg mb-2">Контакты:</p>
                 <p>+7 (XXX) XXX-XX-XX</p>
                 <p>info@example.com</p>
               </div>
               <div className="space-x-4 mb-6">
-                <a href="#" className="text-[#8b4513] hover:underline">VK</a>
-                <a href="#" className="text-[#8b4513] hover:underline">Instagram</a>
-                <a href="#" className="text-[#8b4513] hover:underline">Telegram</a>
+                <a href="#" className="text-[#F3E8E0] hover:underline fade-in" style={{animationDelay: '0.2s'}}>VK</a>
+                <a href="#" className="text-[#F3E8E0] hover:underline fade-in" style={{animationDelay: '0.3s'}}>Instagram</a>
+                <a href="#" className="text-[#F3E8E0] hover:underline fade-in" style={{animationDelay: '0.4s'}}>Telegram</a>
               </div>
               <div className="text-sm space-x-4">
-                <a href="#" className="hover:underline">Политика конфиденциальности</a>
-                <a href="#" className="hover:underline">Публичная оферта</a>
+                <a href="#" className="hover:underline opacity-80">Политика конфиденциальности</a>
+                <a href="#" className="hover:underline opacity-80">Публичная оферта</a>
               </div>
             </footer>
           </div>
@@ -327,7 +425,7 @@ const Index = () => {
           {showBackToTop && (
             <button
               onClick={scrollToTop}
-              className="fixed bottom-8 right-8 bg-[#8b4513] text-[#f5e6d3] p-4 rounded-full shadow-2xl hover:bg-[#6d3410] transition-all z-50 hover:scale-110"
+              className="fixed bottom-8 right-8 bg-[#F3E8E0] text-[#7B1E1E] p-4 rounded-full shadow-2xl hover:scale-110 transition-all z-50"
               aria-label="Вернуться наверх"
             >
               <Icon name="ArrowUp" size={24} />

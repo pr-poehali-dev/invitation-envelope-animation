@@ -237,6 +237,101 @@
   }
 }
 
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes flipInY {
+  from {
+    opacity: 0;
+    transform: perspective(400px) rotateY(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(400px) rotateY(0);
+  }
+}
+
+@keyframes jello {
+  0%,
+  100% {
+    transform: skewX(0deg) skewY(0deg);
+  }
+  30% {
+    transform: skewX(25deg) skewY(25deg);
+  }
+  40% {
+    transform: skewX(-15deg) skewY(-15deg);
+  }
+  50% {
+    transform: skewX(15deg) skewY(15deg);
+  }
+  65% {
+    transform: skewX(-5deg) skewY(-5deg);
+  }
+  75% {
+    transform: skewX(5deg) skewY(5deg);
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
 .kraft-page {
   background: linear-gradient(135deg, #d4c5a9, #c4b5a0, #d4c5a9, #c4b5a0);
   background-size: 400% 400%;
@@ -301,4 +396,49 @@
   backdrop-filter: blur(10px);
   background: rgba(212, 197, 169, 0.95);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.fade-in-down {
+  animation: fadeInDown 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.zoom-in {
+  animation: zoomIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.flip-in-y {
+  animation: flipInY 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.icon-jello {
+  animation: jello 2s ease-in-out infinite;
+}
+
+.animated-gradient {
+  background: linear-gradient(135deg, #7b1e1e, #5d1616, #4a0f0f);
+  background-size: 200% 200%;
+  animation: gradientMove 20s ease-in-out infinite alternate;
 }
