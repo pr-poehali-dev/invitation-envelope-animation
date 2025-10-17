@@ -275,74 +275,88 @@ const Index = () => {
                 </div>
 
                 <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg fade-in-up">
-                  <p className="text-2xl font-bold mb-4" style={{fontFamily: 'Playfair Display, serif'}}>15:00 – 17:10</p>
-                  <div className="space-y-4" style={{fontFamily: 'Lora, serif'}}>
-                    <div className="border-l-2 border-[#F3E8E0] pl-4 fade-in-up" style={{animationDelay: '0.2s'}}>
-                      <div className="flex items-start gap-2">
-                        <Icon name="Brain" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                  <p className="text-2xl font-bold mb-6 text-center" style={{fontFamily: 'Playfair Display, serif'}}>15:00 – 17:10</p>
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6" style={{fontFamily: 'Lora, serif'}}>
+                    <div className="fade-in-up" style={{animationDelay: '0.2s'}}>
+                      <div className="flex flex-col items-center text-center gap-3">
+                        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#8B2E2E] to-[#5d1616] flex items-center justify-center speaker-photo-glow">
+                          <Icon name="User" size={48} className="text-[#F3E8E0]" />
+                        </div>
                         <div>
                           <p className="font-bold text-lg">Оксана Литвиненко</p>
                           <p className="text-sm mb-2 italic opacity-80">Психолог</p>
-                          <p>Синдром самозванца — неочевидный взгляд</p>
+                          <p className="text-sm">Синдром самозванца — неочевидный взгляд</p>
                         </div>
                       </div>
                     </div>
-                    <div className="border-l-2 border-[#F3E8E0] pl-4 fade-in-up" style={{animationDelay: '0.3s'}}>
-                      <div className="flex items-start gap-2">
-                        <Icon name="Scale" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                    <div className="fade-in-up" style={{animationDelay: '0.3s'}}>
+                      <div className="flex flex-col items-center text-center gap-3">
+                        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#8B2E2E] to-[#5d1616] flex items-center justify-center speaker-photo-glow">
+                          <Icon name="User" size={48} className="text-[#F3E8E0]" />
+                        </div>
                         <div>
                           <p className="font-bold text-lg">Ирина Рамазанова</p>
-                          <p className="text-sm italic opacity-80">Юрист для онлайн-бизнеса</p>
+                          <p className="text-sm mb-2 italic opacity-80">Юрист для онлайн-бизнеса</p>
                         </div>
                       </div>
                     </div>
-                    <div className="border-l-2 border-[#F3E8E0] pl-4 fade-in-up" style={{animationDelay: '0.4s'}}>
-                      <div className="flex items-start gap-2">
-                        <Icon name="Mic" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                    <div className="fade-in-up" style={{animationDelay: '0.4s'}}>
+                      <div className="flex flex-col items-center text-center gap-3">
+                        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#8B2E2E] to-[#5d1616] flex items-center justify-center speaker-photo-glow">
+                          <Icon name="User" size={48} className="text-[#F3E8E0]" />
+                        </div>
                         <div>
                           <p className="font-bold text-lg">Ирина Пашко</p>
                           <p className="text-sm mb-2 italic opacity-80">Фотограф, контент-креатор</p>
-                          <p>Красивая речь и объёмный голос — основа личного бренда</p>
+                          <p className="text-sm">Красивая речь и объёмный голос — основа личного бренда</p>
                         </div>
                       </div>
                     </div>
-                    <div className="border-l-2 border-[#F3E8E0] pl-4 fade-in-up" style={{animationDelay: '0.5s'}}>
-                      <div className="flex items-start gap-2">
-                        <Icon name="Mirror" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" fallback="Sparkles" />
+                    <div className="fade-in-up" style={{animationDelay: '0.5s'}}>
+                      <div className="flex flex-col items-center text-center gap-3">
+                        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#8B2E2E] to-[#5d1616] flex items-center justify-center speaker-photo-glow">
+                          <Icon name="User" size={48} className="text-[#F3E8E0]" />
+                        </div>
                         <div>
                           <p className="font-bold text-lg">Анастасия Резникова</p>
                           <p className="text-sm mb-2 italic opacity-80">Тренер по речи и публичным выступлениям</p>
-                          <p>"Кривое зеркало" — как мы видим себя и других через фильтры, которые мешают проявляться</p>
+                          <p className="text-sm">"Кривое зеркало" — как мы видим себя и других через фильтры, которые мешают проявляться</p>
                         </div>
                       </div>
                     </div>
-                    <div className="border-l-2 border-[#F3E8E0] pl-4 fade-in-up" style={{animationDelay: '0.6s'}}>
-                      <div className="flex items-start gap-2">
-                        <Icon name="TrendingUp" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                    <div className="fade-in-up" style={{animationDelay: '0.6s'}}>
+                      <div className="flex flex-col items-center text-center gap-3">
+                        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#8B2E2E] to-[#5d1616] flex items-center justify-center speaker-photo-glow">
+                          <Icon name="User" size={48} className="text-[#F3E8E0]" />
+                        </div>
                         <div>
                           <p className="font-bold text-lg">Елена Мозер</p>
                           <p className="text-sm mb-2 italic opacity-80">Коуч, автор трансформационных игр</p>
-                          <p>Переход на новый уровень дохода</p>
+                          <p className="text-sm">Переход на новый уровень дохода</p>
                         </div>
                       </div>
                     </div>
-                    <div className="border-l-2 border-[#F3E8E0] pl-4 fade-in-up" style={{animationDelay: '0.7s'}}>
-                      <div className="flex items-start gap-2">
-                        <Icon name="Radio" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                    <div className="fade-in-up" style={{animationDelay: '0.7s'}}>
+                      <div className="flex flex-col items-center text-center gap-3">
+                        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#8B2E2E] to-[#5d1616] flex items-center justify-center speaker-photo-glow">
+                          <Icon name="User" size={48} className="text-[#F3E8E0]" />
+                        </div>
                         <div>
                           <p className="font-bold text-lg">Яна Глушан</p>
                           <p className="text-sm mb-2 italic opacity-80">Магистр психологии, расстановщик</p>
-                          <p>Как запускать осознано сарафанное радио</p>
+                          <p className="text-sm">Как запускать осознано сарафанное радио</p>
                         </div>
                       </div>
                     </div>
-                    <div className="border-l-2 border-[#F3E8E0] pl-4 fade-in-up" style={{animationDelay: '0.8s'}}>
-                      <div className="flex items-start gap-2">
-                        <Icon name="Dna" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+                    <div className="fade-in-up" style={{animationDelay: '0.8s'}}>
+                      <div className="flex flex-col items-center text-center gap-3">
+                        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#8B2E2E] to-[#5d1616] flex items-center justify-center speaker-photo-glow">
+                          <Icon name="User" size={48} className="text-[#F3E8E0]" />
+                        </div>
                         <div>
                           <p className="font-bold text-lg">Кристина Кузнецова</p>
                           <p className="text-sm mb-2 italic opacity-80">Эксперт по клиентскому сервису и продажам</p>
-                          <p>Система «ДНК Клиента»</p>
+                          <p className="text-sm">Система «ДНК Клиента»</p>
                         </div>
                       </div>
                     </div>
