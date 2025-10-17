@@ -452,13 +452,16 @@
   }
 }
 
-@keyframes iconColorShift {
+@keyframes iconNeonGlow {
   0%,
   100% {
-    filter: hue-rotate(0deg) brightness(1);
+    color: #f3e8e0;
+    filter: drop-shadow(0 0 2px #f3e8e0);
   }
   50% {
-    filter: hue-rotate(60deg) brightness(1.3);
+    color: #ff1744;
+    filter: drop-shadow(0 0 10px #ff1744) drop-shadow(0 0 20px #ff1744)
+      drop-shadow(0 0 30px #ff1744);
   }
 }
 
@@ -470,5 +473,5 @@
 .icon-hover-effect:hover {
   animation:
     iconRotate 2s ease-in-out,
-    iconColorShift 2s ease-in-out;
+    iconNeonGlow 2s ease-in-out;
 }
