@@ -279,8 +279,12 @@ const Index = () => {
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6" style={{fontFamily: 'Lora, serif'}}>
                     <div className="fade-in-up" style={{animationDelay: '0.2s'}}>
                       <div className="flex flex-col items-center text-center gap-3">
-                        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#8B2E2E] to-[#5d1616] flex items-center justify-center speaker-photo-glow">
-                          <Icon name="User" size={48} className="text-[#F3E8E0]" />
+                        <div className="w-32 h-32 rounded-full speaker-photo-glow overflow-hidden">
+                          <img 
+                            src="https://cdn.poehali.dev/files/06a6b117-4d6f-4279-971b-43d5ecb8e8f0.png" 
+                            alt="Оксана Литвиненко" 
+                            className="w-full h-full object-cover"
+                          />
                         </div>
                         <div>
                           <p className="font-bold text-lg">Оксана Литвиненко</p>
