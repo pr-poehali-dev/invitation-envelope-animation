@@ -73,7 +73,7 @@ const ProgramSection = () => {
                     <img 
                       src="https://cdn.poehali.dev/files/d416b063-f87e-439a-afbc-379ff5a454f2.jpg" 
                       alt="Оксана Литвиненко" 
-                      className="w-full h-full object-cover object-center scale-110"
+                      className="w-full h-full object-cover object-center scale-125"
                     />
                   </div>
                   <div>
@@ -137,7 +137,7 @@ const ProgramSection = () => {
                     <img 
                       src="https://cdn.poehali.dev/files/b6025181-7fe7-45b8-b4ad-d68a2a7887c8.jpg" 
                       alt="Яна Глушан" 
-                      className="w-full h-full object-cover object-center scale-110"
+                      className="w-full h-full object-cover object-center scale-125"
                     />
                   </div>
                   <div>
