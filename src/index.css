@@ -162,3 +162,143 @@
     opacity: 0;
   }
 }
+
+@keyframes gradient-wave {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float-particle {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+  }
+}
+
+@keyframes bounce-icon {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-icon {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes rotate-in {
+  from {
+    transform: rotate(-180deg) scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes wave-icon {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.kraft-page {
+  background: linear-gradient(135deg, #d4c5a9, #c4b5a0, #d4c5a9, #c4b5a0);
+  background-size: 400% 400%;
+  animation: gradient-wave 30s ease-in-out infinite alternate;
+  position: relative;
+  overflow: hidden;
+}
+
+.kraft-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(255, 255, 255, 0.2) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle at 60% 70%,
+      rgba(255, 255, 255, 0.2) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255, 255, 255, 0.2) 1px,
+      transparent 1px
+    );
+  background-size:
+    60px 60px,
+    80px 80px,
+    100px 100px;
+  animation: float-particle 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.icon-bounce:hover {
+  animation: bounce-icon 0.6s ease-in-out;
+}
+
+.icon-pulse:hover {
+  animation: pulse-icon 0.8s ease-in-out;
+}
+
+.icon-rotate {
+  animation: rotate-in 0.6s ease-out;
+}
+
+.icon-wave {
+  animation: wave-icon 2s ease-in-out infinite;
+}
+
+.step-fade-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+  background: rgba(212, 197, 169, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}

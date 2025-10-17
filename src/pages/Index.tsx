@@ -1,8 +1,34 @@
 import { useState, useEffect } from 'react';
+import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [envelopeOpen, setEnvelopeOpen] = useState(false);
   const [animating, setAnimating] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+  const [visibleSteps, setVisibleSteps] = useState<number[]>([]);
+
+  useEffect(() => {
+    if (!envelopeOpen) return;
+
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 300);
+
+      const stepElements = document.querySelectorAll('.program-step');
+      stepElements.forEach((el, index) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.8 && !visibleSteps.includes(index)) {
+          setVisibleSteps(prev => [...prev, index]);
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [envelopeOpen, visibleSteps]);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const handleOpenEnvelope = (e: React.MouseEvent<HTMLButtonElement>) => {
     setAnimating(true);
@@ -68,8 +94,20 @@ const Index = () => {
       )}
 
       {envelopeOpen && (
-        <div className="animate-fade-in relative z-10 min-h-screen bg-[#d4c5a9] text-[#3d2817] py-12 px-4">
-          <div className="max-w-4xl mx-auto">
+        <div className="animate-fade-in relative z-10 min-h-screen kraft-page text-[#3d2817] py-12 px-4">
+          <div className="sticky-header py-4 mb-8">
+            <div className="max-w-4xl mx-auto flex justify-between items-center px-4">
+              <h1 className="text-2xl font-bold text-[#8b4513]">НЕТВОРКИНГ</h1>
+              <a 
+                href="#registration" 
+                className="bg-[#8b4513] text-[#f5e6d3] px-6 py-2 rounded-full font-bold hover:bg-[#6d3410] transition-all text-sm"
+              >
+                Регистрация
+              </a>
+            </div>
+          </div>
+
+          <div className="max-w-4xl mx-auto relative z-10">
             <header className="text-center mb-16">
               <h1 className="text-5xl md:text-7xl font-black mb-6 text-[#8b4513] tracking-tight">
                 НЕТВОРКИНГ
@@ -86,35 +124,41 @@ const Index = () => {
             </header>
 
             <div className="text-center mb-16 bg-[#c4b5a0]/50 p-8 rounded-lg shadow-md">
-              <p className="text-2xl font-bold mb-2">27 ноября, 12:30 — 18:00</p>
-              <p className="text-xl">Ангар Edwin Group</p>
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <Icon name="Calendar" size={36} className="text-[#F4B400] icon-bounce" />
+                <p className="text-2xl font-bold">27 ноября, 12:30 — 18:00</p>
+              </div>
+              <div className="flex items-center justify-center gap-3">
+                <Icon name="MapPin" size={36} className="text-[#0F9D58] icon-pulse" />
+                <p className="text-xl">Ангар Edwin Group</p>
+              </div>
             </div>
 
             <section className="mb-16">
               <h2 className="text-4xl font-black text-center mb-10 text-[#8b4513]">ТЫ СМОЖЕШЬ</h2>
               <ul className="space-y-4">
-                <li className="flex items-start gap-3 bg-[#c4b5a0]/30 p-4 rounded-lg">
-                  <span className="text-2xl">✓</span>
+                <li className="flex items-start gap-3 bg-[#c4b5a0]/30 p-4 rounded-lg hover:bg-[#c4b5a0]/50 transition-all">
+                  <Icon name="Sparkles" size={24} className="text-[#F4B400] flex-shrink-0 mt-1" />
                   <span className="text-lg">Вдохновиться историями обычных женщин и понять, что ты тоже так можешь!</span>
                 </li>
-                <li className="flex items-start gap-3 bg-[#c4b5a0]/30 p-4 rounded-lg">
-                  <span className="text-2xl">✓</span>
+                <li className="flex items-start gap-3 bg-[#c4b5a0]/30 p-4 rounded-lg hover:bg-[#c4b5a0]/50 transition-all">
+                  <Icon name="Users" size={24} className="text-[#4285F4] flex-shrink-0 mt-1 icon-wave" />
                   <span className="text-lg">Заявить о себе на большую аудиторию или сделать свой первый шаг из тени.</span>
                 </li>
-                <li className="flex items-start gap-3 bg-[#c4b5a0]/30 p-4 rounded-lg">
-                  <span className="text-2xl">✓</span>
+                <li className="flex items-start gap-3 bg-[#c4b5a0]/30 p-4 rounded-lg hover:bg-[#c4b5a0]/50 transition-all">
+                  <Icon name="Network" size={24} className="text-[#0F9D58] flex-shrink-0 mt-1" />
                   <span className="text-lg">Пополнить окружение десятками качественных контактов.</span>
                 </li>
-                <li className="flex items-start gap-3 bg-[#c4b5a0]/30 p-4 rounded-lg">
-                  <span className="text-2xl">✓</span>
+                <li className="flex items-start gap-3 bg-[#c4b5a0]/30 p-4 rounded-lg hover:bg-[#c4b5a0]/50 transition-all">
+                  <Icon name="Handshake" size={24} className="text-[#DB4437] flex-shrink-0 mt-1" />
                   <span className="text-lg">Получить ценное предложение о сотрудничестве.</span>
                 </li>
-                <li className="flex items-start gap-3 bg-[#c4b5a0]/30 p-4 rounded-lg">
-                  <span className="text-2xl">✓</span>
+                <li className="flex items-start gap-3 bg-[#c4b5a0]/30 p-4 rounded-lg hover:bg-[#c4b5a0]/50 transition-all">
+                  <Icon name="Lightbulb" size={24} className="text-[#F4B400] flex-shrink-0 mt-1" />
                   <span className="text-lg">Познакомиться с новыми инструментами и получить ценные осознания.</span>
                 </li>
-                <li className="flex items-start gap-3 bg-[#c4b5a0]/30 p-4 rounded-lg">
-                  <span className="text-2xl">✓</span>
+                <li className="flex items-start gap-3 bg-[#c4b5a0]/30 p-4 rounded-lg hover:bg-[#c4b5a0]/50 transition-all">
+                  <Icon name="Gift" size={24} className="text-[#DB4437] flex-shrink-0 mt-1 icon-rotate" />
                   <span className="text-lg">Унести с собой много приятных подарков.</span>
                 </li>
               </ul>
@@ -140,6 +184,30 @@ const Index = () => {
 
             <section className="mb-16">
               <h2 className="text-4xl font-black text-center mb-10 text-[#8b4513]">ПРОГРАММА</h2>
+              
+              <div className="mb-12 flex flex-wrap justify-center gap-4">
+                <div className="flex items-center gap-2 bg-[#4285F4]/10 px-4 py-2 rounded-full program-step step-fade-in">
+                  <Icon name="UserCheck" size={24} className="text-[#4285F4]" />
+                  <span className="font-semibold">Регистрация</span>
+                </div>
+                <div className="flex items-center gap-2 bg-[#0F9D58]/10 px-4 py-2 rounded-full program-step step-fade-in" style={{animationDelay: '0.1s'}}>
+                  <Icon name="Mic" size={24} className="text-[#0F9D58]" />
+                  <span className="font-semibold">Вступительное слово</span>
+                </div>
+                <div className="flex items-center gap-2 bg-[#F4B400]/10 px-4 py-2 rounded-full program-step step-fade-in" style={{animationDelay: '0.2s'}}>
+                  <Icon name="Users" size={24} className="text-[#F4B400] icon-wave" />
+                  <span className="font-semibold">Работа с экспертами</span>
+                </div>
+                <div className="flex items-center gap-2 bg-[#DB4437]/10 px-4 py-2 rounded-full program-step step-fade-in" style={{animationDelay: '0.3s'}}>
+                  <Icon name="Utensils" size={24} className="text-[#DB4437]" />
+                  <span className="font-semibold">Фуршет</span>
+                </div>
+                <div className="flex items-center gap-2 bg-[#4285F4]/10 px-4 py-2 rounded-full program-step step-fade-in" style={{animationDelay: '0.4s'}}>
+                  <Icon name="Flag" size={24} className="text-[#4285F4]" />
+                  <span className="font-semibold">Завершение</span>
+                </div>
+              </div>
+
               <div className="space-y-6">
                 <div className="bg-[#c4b5a0]/40 p-6 rounded-lg">
                   <p className="text-2xl font-bold mb-4 text-[#8b4513]">12:30 – 14:00</p>
@@ -255,6 +323,16 @@ const Index = () => {
               </div>
             </footer>
           </div>
+
+          {showBackToTop && (
+            <button
+              onClick={scrollToTop}
+              className="fixed bottom-8 right-8 bg-[#8b4513] text-[#f5e6d3] p-4 rounded-full shadow-2xl hover:bg-[#6d3410] transition-all z-50 hover:scale-110"
+              aria-label="Вернуться наверх"
+            >
+              <Icon name="ArrowUp" size={24} />
+            </button>
+          )}
         </div>
       )}
     </div>
