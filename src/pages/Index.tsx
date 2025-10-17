@@ -6,6 +6,28 @@ const Index = () => {
   const [animating, setAnimating] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [visibleSteps, setVisibleSteps] = useState<number[]>([]);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const testimonialImages = [
+    'https://cdn.poehali.dev/files/74ac9813-a1f3-41c5-8d28-b1fbda151969.jpg',
+    'https://cdn.poehali.dev/files/58acb265-fe95-486f-83bc-60ae09e7fe1c.jpg',
+    'https://cdn.poehali.dev/files/bc0d9817-1b34-4ede-84cc-9549092fe01e.jpg',
+    'https://cdn.poehali.dev/files/7f24df58-e4b7-4f28-8993-ef8d037265e5.jpg',
+    'https://cdn.poehali.dev/files/7b43332f-6159-480f-b6dd-efa4cbbfe90b.jpg',
+    'https://cdn.poehali.dev/files/392dac21-21d3-402b-9f24-bfb0cb788156.jpg',
+    'https://cdn.poehali.dev/files/78d9b0e2-2229-458f-919d-bd33aaaf67b2.jpg',
+    'https://cdn.poehali.dev/files/6236f3e6-1462-4f3f-98f8-cf46de9e5c2d.jpg',
+    'https://cdn.poehali.dev/files/aa06e611-3525-44d6-8019-07fa0a4d1ab2.jpg',
+    'https://cdn.poehali.dev/files/cb8a34a8-3c6c-4b0f-b634-cb3e024ca035.jpg'
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % testimonialImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + testimonialImages.length) % testimonialImages.length);
+  };
 
   useEffect(() => {
     if (!envelopeOpen) return;
@@ -399,6 +421,45 @@ const Index = () => {
                     <Icon name="FlagCheckered" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" fallback="Flag" />
                     <p style={{fontFamily: 'Lora, serif'}}>Финал мероприятия</p>
                   </div>
+                </div>
+              </div>
+            </section>
+
+            <section className="mb-16 fade-in">
+              <h2 className="text-4xl font-black text-center mb-10" style={{fontFamily: 'Playfair Display, serif'}}>ОТЗЫВЫ УЧАСТНИКОВ</h2>
+              <div className="relative max-w-2xl mx-auto">
+                <div className="overflow-hidden rounded-lg shadow-2xl">
+                  <img 
+                    src={testimonialImages[currentSlide]} 
+                    alt={`Отзыв участника ${currentSlide + 1}`}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-[#F3E8E0] text-[#7B1E1E] p-3 rounded-full shadow-lg hover:scale-110 transition-all"
+                  aria-label="Предыдущий отзыв"
+                >
+                  <Icon name="ChevronLeft" size={24} />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-[#F3E8E0] text-[#7B1E1E] p-3 rounded-full shadow-lg hover:scale-110 transition-all"
+                  aria-label="Следующий отзыв"
+                >
+                  <Icon name="ChevronRight" size={24} />
+                </button>
+                <div className="flex justify-center gap-2 mt-6">
+                  {testimonialImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-2 h-2 rounded-full transition-all ${
+                        index === currentSlide ? 'bg-[#F3E8E0] w-8' : 'bg-[#F3E8E0]/40'
+                      }`}
+                      aria-label={`Перейти к отзыву ${index + 1}`}
+                    />
+                  ))}
                 </div>
               </div>
             </section>
