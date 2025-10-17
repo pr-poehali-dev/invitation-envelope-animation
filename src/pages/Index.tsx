@@ -147,6 +147,24 @@ const Index = () => {
             </div>
 
             <section className="mb-16 fade-in" style={{animationDelay: '0.3s'}}>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                <img 
+                  src="https://cdn.poehali.dev/files/257e4ec2-dca5-44cc-82b6-abb69c75c80f.jpg" 
+                  alt="Нетворкинг участницы" 
+                  className="w-full h-80 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                />
+                <img 
+                  src="https://cdn.poehali.dev/files/c0f7c3fd-a2a0-457b-8a87-ea115a4ae0ab.jpg" 
+                  alt="Участницы мероприятия" 
+                  className="w-full h-80 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                />
+                <img 
+                  src="https://cdn.poehali.dev/files/984051b9-171f-482d-b23b-2839756824e3.jpg" 
+                  alt="Команда нетворкинга" 
+                  className="w-full h-80 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+
               <h2 className="text-4xl font-black text-center mb-10" style={{fontFamily: 'Playfair Display, serif'}}>ТЫ СМОЖЕШЬ</h2>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 bg-white/10 backdrop-blur-sm p-4 rounded-lg hover:bg-white/20 transition-all fade-in-left" style={{animationDelay: '0.4s'}}>
