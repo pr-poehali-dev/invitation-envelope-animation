@@ -16,10 +16,10 @@ const TestimonialsScroll = () => {
     <div className="max-w-4xl mx-auto relative z-10">
       <section className="mb-16 fade-in">
         <h2 className="text-4xl font-black text-center mb-10" style={{fontFamily: 'Playfair Display, serif'}}>ОТЗЫВЫ УЧАСТНИКОВ</h2>
-        <div className="overflow-x-auto pb-4 -mx-4 px-4">
-          <div className="flex gap-4 min-w-max">
+        <div className="overflow-y-auto max-h-[600px] -mx-4 px-4 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#F3E8E0]/30">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {testimonialImages.map((src, index) => (
-              <div key={index} className="flex-shrink-0 w-80">
+              <div key={index} className="w-full">
                 <img 
                   src={src} 
                   alt={`Отзыв участника ${index + 1}`}
