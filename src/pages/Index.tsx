@@ -101,9 +101,9 @@ const Index = () => {
                 }`}
               >
                 <img 
-                  src="https://cdn.poehali.dev/files/8e213694-5064-432b-a960-4f1fb6abe0b0.jpg" 
-                  alt="Конверт с приглашением" 
-                  className="w-full h-auto"
+                  src="https://cdn.poehali.dev/files/90401f5b-2fe1-45c3-9511-f55caa486631.jpeg" 
+                  alt="Ваш билет на нетворкинг" 
+                  className="w-full h-auto rounded-lg shadow-2xl"
                 />
               </button>
             </div>
