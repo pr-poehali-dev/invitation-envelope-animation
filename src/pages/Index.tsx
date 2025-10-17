@@ -41,13 +41,13 @@ const Index = () => {
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
     
-    const particleCount = 30;
+    const particleCount = 60;
     for (let i = 0; i < particleCount; i++) {
       const particle = document.createElement('div');
       particle.className = 'particle-explosion';
       
       const angle = Math.random() * 2 * Math.PI;
-      const dist = Math.random() * 120 + 40;
+      const dist = Math.random() * 300 + 100;
       const dx = Math.cos(angle) * dist;
       const dy = Math.sin(angle) * dist;
       
@@ -58,12 +58,12 @@ const Index = () => {
       
       document.body.appendChild(particle);
       
-      setTimeout(() => particle.remove(), 800);
+      setTimeout(() => particle.remove(), 2000);
     }
     
     setTimeout(() => {
       setEnvelopeOpen(true);
-    }, 400);
+    }, 1000);
   };
 
   const benefits = [

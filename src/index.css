@@ -136,24 +136,29 @@
 
 .particle-explosion {
   position: fixed;
-  width: 8px;
-  height: 8px;
-  background: #ffd700;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #ffd700, #ffed4e);
   border-radius: 50%;
   pointer-events: none;
   opacity: 1;
   z-index: 9999;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
-  animation: explode-particle 0.8s forwards ease-out;
+  box-shadow:
+    0 0 20px rgba(255, 215, 0, 1),
+    0 0 40px rgba(255, 215, 0, 0.6);
+  animation: explode-particle 2s forwards ease-out;
 }
 
 @keyframes explode-particle {
   0% {
-    transform: translate(0, 0) scale(1);
+    transform: translate(0, 0) scale(1) rotate(0deg);
     opacity: 1;
   }
+  50% {
+    opacity: 0.8;
+  }
   100% {
-    transform: translate(var(--dx), var(--dy)) scale(0.3);
+    transform: translate(var(--dx), var(--dy)) scale(0.2) rotate(360deg);
     opacity: 0;
   }
 }
