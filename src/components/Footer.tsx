@@ -4,8 +4,7 @@ const Footer = () => {
       <footer className="text-center pt-8 border-t-2 border-[#F3E8E0]/30" style={{background: 'rgba(123,30,30,0.4)', fontFamily: 'Lora, serif'}}>
         <div className="mb-6">
           <p className="text-lg mb-2">Контакты:</p>
-          <p>+7 (XXX) XXX-XX-XX</p>
-          <p>info@example.com</p>
+          <p>+7-914-704-35-36</p>
         </div>
         <div className="space-x-4 mb-6">
           <a href="#" className="text-[#F3E8E0] hover:underline fade-in" style={{animationDelay: '0.2s'}}>VK</a>
