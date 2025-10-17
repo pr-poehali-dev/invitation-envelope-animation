@@ -140,7 +140,7 @@ const Index = () => {
                 <Icon name="Calendar" size={36} className="text-[#F3E8E0]" />
                 <p className="text-2xl font-bold" style={{fontFamily: 'Lora, serif'}}>27 ноября, 12:30 — 18:00</p>
               </div>
-              <div className="flex items-center justify-center gap-3 icon-jello" style={{animationDelay: '0.2s'}}>
+              <div className="flex items-center justify-center gap-3">
                 <Icon name="MapPin" size={36} className="text-[#F3E8E0]" />
                 <p className="text-xl" style={{fontFamily: 'Lora, serif'}}>Ангар Edwin Group</p>
               </div>
