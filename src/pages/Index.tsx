@@ -74,10 +74,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] text-[#333333] overflow-x-hidden relative">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-10 w-72 h-72 bg-[#f24822]/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-96 h-96 bg-[#ffd700]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-[#ff6b9d]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-[#c471ed]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute top-5 md:top-10 left-5 md:left-10 w-40 h-40 md:w-72 md:h-72 bg-[#f24822]/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-20 md:top-40 right-10 md:right-20 w-48 h-48 md:w-96 md:h-96 bg-[#ffd700]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-10 md:bottom-20 left-1/4 md:left-1/3 w-40 h-40 md:w-80 md:h-80 bg-[#ff6b9d]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 right-1/4 w-32 h-32 md:w-64 md:h-64 bg-[#c471ed]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
       </div>
 
       {!envelopeOpen && (
@@ -85,7 +85,7 @@ const Index = () => {
       )}
 
       {envelopeOpen && (
-        <div className="animate-fade-in relative z-10 min-h-screen bg-gradient-to-br from-[#7B1E1E] via-[#5d1616] to-[#4A0F0F] text-[#F3E8E0] py-12 px-4">
+        <div className="animate-fade-in relative z-10 min-h-screen bg-gradient-to-br from-[#7B1E1E] via-[#5d1616] to-[#4A0F0F] text-[#F3E8E0] py-8 md:py-12">
           <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20,50 Q30,30 40,50 T60,50 T80,50' stroke='%23F3E8E0' fill='none' stroke-width='0.5'/%3E%3Cpath d='M10,70 Q20,50 30,70 T50,70 T70,70' stroke='%23F3E8E0' fill='none' stroke-width='0.5'/%3E%3C/svg%3E")`,
             backgroundSize: '100px 100px'
@@ -102,10 +102,10 @@ const Index = () => {
           {showBackToTop && (
             <button
               onClick={scrollToTop}
-              className="fixed bottom-8 right-8 bg-[#F3E8E0] text-[#7B1E1E] p-4 rounded-full shadow-2xl hover:scale-110 transition-all z-50"
+              className="fixed bottom-6 right-4 md:bottom-8 md:right-8 bg-[#F3E8E0] text-[#7B1E1E] p-3 md:p-4 rounded-full shadow-2xl hover:scale-110 transition-all z-50"
               aria-label="Вернуться наверх"
             >
-              <Icon name="ArrowUp" size={24} />
+              <Icon name="ArrowUp" size={20} className="md:w-6 md:h-6" />
             </button>
           )}
         </div>

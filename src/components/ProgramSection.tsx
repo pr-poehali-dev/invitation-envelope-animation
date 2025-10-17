@@ -2,74 +2,74 @@ import Icon from '@/components/ui/icon';
 
 const ProgramSection = () => {
   return (
-    <div className="max-w-4xl mx-auto relative z-10">
-      <section className="mb-16" id="program">
-        <h2 className="text-4xl font-black text-center mb-10" style={{fontFamily: 'Playfair Display, serif'}}>ПРОГРАММА</h2>
+    <div className="max-w-4xl mx-auto relative z-10 px-4">
+      <section className="mb-12 md:mb-16" id="program">
+        <h2 className="text-3xl md:text-4xl font-black text-center mb-8 md:mb-10" style={{fontFamily: 'Playfair Display, serif'}}>ПРОГРАММА</h2>
         
-        <div className="mb-12 flex flex-wrap justify-center gap-4">
-          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full program-step step-fade-in" style={{fontFamily: 'Lora, serif'}}>
-            <Icon name="UserCheck" size={24} className="text-[#F3E8E0]" />
+        <div className="mb-8 md:mb-12 flex flex-wrap justify-center gap-2 md:gap-4">
+          <div className="flex items-center gap-1.5 md:gap-2 bg-white/10 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-full program-step step-fade-in text-sm md:text-base" style={{fontFamily: 'Lora, serif'}}>
+            <Icon name="UserCheck" size={18} className="text-[#F3E8E0] md:w-6 md:h-6" />
             <span className="font-semibold">Регистрация</span>
           </div>
-          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full program-step step-fade-in" style={{animationDelay: '0.1s', fontFamily: 'Lora, serif'}}>
-            <Icon name="Mic" size={24} className="text-[#F3E8E0]" />
+          <div className="flex items-center gap-1.5 md:gap-2 bg-white/10 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-full program-step step-fade-in text-sm md:text-base" style={{animationDelay: '0.1s', fontFamily: 'Lora, serif'}}>
+            <Icon name="Mic" size={18} className="text-[#F3E8E0] md:w-6 md:h-6" />
             <span className="font-semibold">Вступительное слово</span>
           </div>
-          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full program-step step-fade-in" style={{animationDelay: '0.2s', fontFamily: 'Lora, serif'}}>
-            <Icon name="Users" size={24} className="text-[#F3E8E0] icon-wave" />
+          <div className="flex items-center gap-1.5 md:gap-2 bg-white/10 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-full program-step step-fade-in text-sm md:text-base" style={{animationDelay: '0.2s', fontFamily: 'Lora, serif'}}>
+            <Icon name="Users" size={18} className="text-[#F3E8E0] icon-wave md:w-6 md:h-6" />
             <span className="font-semibold">Работа с экспертами</span>
           </div>
-          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full program-step step-fade-in" style={{animationDelay: '0.3s', fontFamily: 'Lora, serif'}}>
-            <Icon name="Utensils" size={24} className="text-[#F3E8E0]" />
+          <div className="flex items-center gap-1.5 md:gap-2 bg-white/10 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-full program-step step-fade-in text-sm md:text-base" style={{animationDelay: '0.3s', fontFamily: 'Lora, serif'}}>
+            <Icon name="Utensils" size={18} className="text-[#F3E8E0] md:w-6 md:h-6" />
             <span className="font-semibold">Фуршет</span>
           </div>
-          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full program-step step-fade-in" style={{animationDelay: '0.4s', fontFamily: 'Lora, serif'}}>
-            <Icon name="Flag" size={24} className="text-[#F3E8E0]" />
+          <div className="flex items-center gap-1.5 md:gap-2 bg-white/10 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-full program-step step-fade-in text-sm md:text-base" style={{animationDelay: '0.4s', fontFamily: 'Lora, serif'}}>
+            <Icon name="Flag" size={18} className="text-[#F3E8E0] md:w-6 md:h-6" />
             <span className="font-semibold">Завершение</span>
           </div>
         </div>
 
-        <div className="space-y-6">
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg fade-in-left" style={{animationDelay: '0.2s'}}>
-            <p className="text-2xl font-bold mb-4" style={{fontFamily: 'Playfair Display, serif'}}>12:30 – 14:00</p>
-            <ul className="space-y-3" style={{fontFamily: 'Lora, serif'}}>
-              <li className="flex items-start gap-3">
-                <Icon name="Coffee" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+        <div className="space-y-4 md:space-y-6">
+          <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-lg fade-in-left" style={{animationDelay: '0.2s'}}>
+            <p className="text-xl md:text-2xl font-bold mb-3 md:mb-4" style={{fontFamily: 'Playfair Display, serif'}}>12:30 – 14:00</p>
+            <ul className="space-y-2 md:space-y-3 text-sm md:text-base" style={{fontFamily: 'Lora, serif'}}>
+              <li className="flex items-start gap-2 md:gap-3">
+                <Icon name="Coffee" size={18} className="text-[#F3E8E0] flex-shrink-0 mt-0.5 md:w-5 md:h-5" />
                 <span>Сбор гостей, приветственный фуршет</span>
               </li>
-              <li className="flex items-start gap-3">
-                <Icon name="Sparkles" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+              <li className="flex items-start gap-2 md:gap-3">
+                <Icon name="Sparkles" size={18} className="text-[#F3E8E0] flex-shrink-0 mt-0.5 md:w-5 md:h-5" />
                 <span>Открытие, выступление гостей нетворкинга, раскрытие темы дня</span>
               </li>
-              <li className="flex items-start gap-3">
-                <Icon name="Users" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
+              <li className="flex items-start gap-2 md:gap-3">
+                <Icon name="Users" size={18} className="text-[#F3E8E0] flex-shrink-0 mt-0.5 md:w-5 md:h-5" />
                 <span>Игра-знакомство</span>
               </li>
             </ul>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg fade-in-right" style={{animationDelay: '0.2s'}}>
-            <p className="text-2xl font-bold mb-4" style={{fontFamily: 'Playfair Display, serif'}}>14:00 – 14:40</p>
-            <div className="flex items-start gap-3">
-              <Icon name="Settings" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
-              <p style={{fontFamily: 'Lora, serif'}}>Работа с экспертами на станциях</p>
+          <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-lg fade-in-right" style={{animationDelay: '0.2s'}}>
+            <p className="text-xl md:text-2xl font-bold mb-3 md:mb-4" style={{fontFamily: 'Playfair Display, serif'}}>14:00 – 14:40</p>
+            <div className="flex items-start gap-2 md:gap-3">
+              <Icon name="Settings" size={18} className="text-[#F3E8E0] flex-shrink-0 mt-0.5 md:w-5 md:h-5" />
+              <p className="text-sm md:text-base" style={{fontFamily: 'Lora, serif'}}>Работа с экспертами на станциях</p>
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg fade-in-right" style={{animationDelay: '0.3s'}}>
-            <p className="text-2xl font-bold mb-4" style={{fontFamily: 'Playfair Display, serif'}}>14:40 – 15:00</p>
-            <div className="flex items-start gap-3">
-              <Icon name="Utensils" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" />
-              <p style={{fontFamily: 'Lora, serif'}}>Фуршет</p>
+          <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-lg fade-in-right" style={{animationDelay: '0.3s'}}>
+            <p className="text-xl md:text-2xl font-bold mb-3 md:mb-4" style={{fontFamily: 'Playfair Display, serif'}}>14:40 – 15:00</p>
+            <div className="flex items-start gap-2 md:gap-3">
+              <Icon name="Utensils" size={18} className="text-[#F3E8E0] flex-shrink-0 mt-0.5 md:w-5 md:h-5" />
+              <p className="text-sm md:text-base" style={{fontFamily: 'Lora, serif'}}>Фуршет</p>
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg fade-in-up">
-            <p className="text-2xl font-bold mb-6 text-center" style={{fontFamily: 'Playfair Display, serif'}}>15:00 – 17:10</p>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6" style={{fontFamily: 'Lora, serif'}}>
+          <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-lg fade-in-up">
+            <p className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center" style={{fontFamily: 'Playfair Display, serif'}}>15:00 – 17:10</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6" style={{fontFamily: 'Lora, serif'}}>
               <div className="fade-in-up" style={{animationDelay: '0.2s'}}>
-                <div className="flex flex-col items-center text-center gap-3">
-                  <div className="w-40 h-40 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
+                <div className="flex flex-col items-center text-center gap-2 md:gap-3">
+                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
                     <img 
                       src="https://cdn.poehali.dev/files/d416b063-f87e-439a-afbc-379ff5a454f2.jpg" 
                       alt="Оксана Литвиненко" 
@@ -77,9 +77,9 @@ const ProgramSection = () => {
                     />
                   </div>
                   <div>
-                    <p className="font-bold text-lg">Оксана Литвиненко</p>
-                    <p className="text-sm mb-2 italic opacity-80">Психолог</p>
-                    <p className="text-sm">Синдром самозванца — неочевидный взгляд</p>
+                    <p className="font-bold text-base md:text-lg">Оксана Литвиненко</p>
+                    <p className="text-xs md:text-sm mb-1 md:mb-2 italic opacity-80">Психолог</p>
+                    <p className="text-xs md:text-sm">Синдром самозванца — неочевидный взгляд</p>
                   </div>
                 </div>
               </div>

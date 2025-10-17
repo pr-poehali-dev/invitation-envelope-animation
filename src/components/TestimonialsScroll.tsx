@@ -13,13 +13,13 @@ const TestimonialsScroll = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto relative z-10">
-      <section className="mb-16 fade-in">
-        <h2 className="text-4xl font-black text-center mb-10" style={{fontFamily: 'Playfair Display, serif'}}>ОТЗЫВЫ УЧАСТНИКОВ</h2>
+    <div className="max-w-4xl mx-auto relative z-10 px-4">
+      <section className="mb-12 md:mb-16 fade-in">
+        <h2 className="text-3xl md:text-4xl font-black text-center mb-8 md:mb-10" style={{fontFamily: 'Playfair Display, serif'}}>ОТЗЫВЫ УЧАСТНИКОВ</h2>
         <div className="overflow-x-auto pb-4 -mx-4 px-4">
-          <div className="flex gap-4 min-w-max">
+          <div className="flex gap-3 md:gap-4 min-w-max">
             {testimonialImages.map((src, index) => (
-              <div key={index} className="flex-shrink-0 w-60">
+              <div key={index} className="flex-shrink-0 w-52 md:w-60">
                 <img 
                   src={src} 
                   alt={`Отзыв участника ${index + 1}`}
