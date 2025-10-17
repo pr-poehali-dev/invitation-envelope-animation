@@ -87,6 +87,11 @@ const Index = () => {
       {!envelopeOpen && (
         <section className="h-screen flex items-center justify-center relative z-10">
           <div className="text-center w-full max-w-4xl mx-auto px-4">
+            <div className="mb-8">
+              <div className="text-6xl md:text-8xl lg:text-9xl font-black text-[#ffd700] pulse-glow">
+                НАЖМИ
+              </div>
+            </div>
             <div className="relative w-full max-w-3xl mx-auto">
               <button
                 onClick={handleOpenEnvelope}
@@ -135,12 +140,6 @@ const Index = () => {
                 Мастермайнд-формат без теории – всё для мгновенного результата
               </p>
               
-              <div className="mb-12">
-                <div className="text-6xl md:text-8xl lg:text-9xl font-black text-[#ffd700] pulse-glow mb-8">
-                  НАЖМИ
-                </div>
-              </div>
-
               <div className="mb-8 flex justify-center gap-4 md:gap-8 flex-wrap">
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 min-w-[80px]">
                   <div className="text-3xl md:text-4xl font-bold text-[#ffd700]">{timeLeft.days}</div>
