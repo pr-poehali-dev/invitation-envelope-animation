@@ -300,11 +300,11 @@ const Index = () => {
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6" style={{fontFamily: 'Lora, serif'}}>
                     <div className="fade-in-up" style={{animationDelay: '0.2s'}}>
                       <div className="flex flex-col items-center text-center gap-3">
-                        <div className="w-32 h-32 rounded-full speaker-photo-glow overflow-hidden">
+                        <div className="w-32 h-32 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
                           <img 
                             src="https://cdn.poehali.dev/files/d416b063-f87e-439a-afbc-379ff5a454f2.jpg" 
                             alt="Оксана Литвиненко" 
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover object-center"
                           />
                         </div>
                         <div>
@@ -316,19 +316,12 @@ const Index = () => {
                     </div>
                     <div className="fade-in-up" style={{animationDelay: '0.3s'}}>
                       <div className="flex flex-col items-center text-center gap-3">
-                        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#8B2E2E] to-[#5d1616] flex items-center justify-center speaker-photo-glow">
-                          <Icon name="User" size={48} className="text-[#F3E8E0]" />
-                        </div>
-                        <div>
-                          <p className="font-bold text-lg">Ирина Рамазанова</p>
-                          <p className="text-sm mb-2 italic opacity-80">Юрист для онлайн-бизнеса</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="fade-in-up" style={{animationDelay: '0.4s'}}>
-                      <div className="flex flex-col items-center text-center gap-3">
-                        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#8B2E2E] to-[#5d1616] flex items-center justify-center speaker-photo-glow">
-                          <Icon name="User" size={48} className="text-[#F3E8E0]" />
+                        <div className="w-32 h-32 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
+                          <img 
+                            src="https://cdn.poehali.dev/files/d1d11e95-10de-430d-bf64-7b088caf294d.jpg" 
+                            alt="Ирина Пашко" 
+                            className="w-full h-full object-cover object-center"
+                          />
                         </div>
                         <div>
                           <p className="font-bold text-lg">Ирина Пашко</p>
@@ -337,10 +330,14 @@ const Index = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="fade-in-up" style={{animationDelay: '0.5s'}}>
+                    <div className="fade-in-up" style={{animationDelay: '0.4s'}}>
                       <div className="flex flex-col items-center text-center gap-3">
-                        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#8B2E2E] to-[#5d1616] flex items-center justify-center speaker-photo-glow">
-                          <Icon name="User" size={48} className="text-[#F3E8E0]" />
+                        <div className="w-32 h-32 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
+                          <img 
+                            src="https://cdn.poehali.dev/files/98899be7-82bd-420b-9932-5772fab4b707.jpg" 
+                            alt="Анастасия Резникова" 
+                            className="w-full h-full object-cover object-center"
+                          />
                         </div>
                         <div>
                           <p className="font-bold text-lg">Анастасия Резникова</p>
@@ -349,10 +346,14 @@ const Index = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="fade-in-up" style={{animationDelay: '0.6s'}}>
+                    <div className="fade-in-up" style={{animationDelay: '0.5s'}}>
                       <div className="flex flex-col items-center text-center gap-3">
-                        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#8B2E2E] to-[#5d1616] flex items-center justify-center speaker-photo-glow">
-                          <Icon name="User" size={48} className="text-[#F3E8E0]" />
+                        <div className="w-32 h-32 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
+                          <img 
+                            src="https://cdn.poehali.dev/files/7fbdd71d-7bff-4393-9c4f-c148f2538c3f.jpg" 
+                            alt="Елена Мозер" 
+                            className="w-full h-full object-cover object-center"
+                          />
                         </div>
                         <div>
                           <p className="font-bold text-lg">Елена Мозер</p>
@@ -361,10 +362,14 @@ const Index = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="fade-in-up" style={{animationDelay: '0.7s'}}>
+                    <div className="fade-in-up" style={{animationDelay: '0.6s'}}>
                       <div className="flex flex-col items-center text-center gap-3">
-                        <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#8B2E2E] to-[#5d1616] flex items-center justify-center speaker-photo-glow">
-                          <Icon name="User" size={48} className="text-[#F3E8E0]" />
+                        <div className="w-32 h-32 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
+                          <img 
+                            src="https://cdn.poehali.dev/files/b6025181-7fe7-45b8-b4ad-d68a2a7887c8.jpg" 
+                            alt="Яна Глушан" 
+                            className="w-full h-full object-cover object-center"
+                          />
                         </div>
                         <div>
                           <p className="font-bold text-lg">Яна Глушан</p>
@@ -373,7 +378,7 @@ const Index = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="fade-in-up" style={{animationDelay: '0.8s'}}>
+                    <div className="fade-in-up" style={{animationDelay: '0.7s'}}>
                       <div className="flex flex-col items-center text-center gap-3">
                         <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#8B2E2E] to-[#5d1616] flex items-center justify-center speaker-photo-glow">
                           <Icon name="User" size={48} className="text-[#F3E8E0]" />
