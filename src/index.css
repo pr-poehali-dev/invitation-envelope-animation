@@ -111,3 +111,25 @@
     font-family: "Montserrat", sans-serif;
   }
 }
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    transform: scale(1);
+    text-shadow:
+      0 0 20px rgba(255, 215, 0, 0.8),
+      0 0 40px rgba(255, 215, 0, 0.6),
+      0 0 60px rgba(255, 215, 0, 0.4);
+  }
+  50% {
+    transform: scale(1.1);
+    text-shadow:
+      0 0 30px rgba(255, 215, 0, 1),
+      0 0 60px rgba(255, 215, 0, 0.8),
+      0 0 90px rgba(255, 215, 0, 0.6);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}

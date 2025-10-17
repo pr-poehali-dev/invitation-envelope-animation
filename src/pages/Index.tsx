@@ -135,6 +135,12 @@ const Index = () => {
                 Мастермайнд-формат без теории – всё для мгновенного результата
               </p>
               
+              <div className="mb-12">
+                <div className="text-6xl md:text-8xl lg:text-9xl font-black text-[#ffd700] pulse-glow mb-8">
+                  НАЖМИ
+                </div>
+              </div>
+
               <div className="mb-8 flex justify-center gap-4 md:gap-8 flex-wrap">
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 min-w-[80px]">
                   <div className="text-3xl md:text-4xl font-bold text-[#ffd700]">{timeLeft.days}</div>
