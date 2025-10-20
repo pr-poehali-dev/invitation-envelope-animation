@@ -166,10 +166,10 @@ const ProgramSection = () => {
                 <div className="flex flex-col items-center text-center gap-2 md:gap-3">
                   <div className="w-32 h-32 md:w-40 md:h-40 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
                     <img 
-                      src="https://cdn.poehali.dev/files/3e54f4c9-9c9f-41a9-b07c-a3b54cb41c4d.jpg" 
+                      src="https://cdn.poehali.dev/projects/9f6adc22-8e89-4797-8c0b-c1ace97deedd/files/5c280c9d-1ec9-4bdb-9c99-7001dbd954ac.jpg" 
                       alt="Ольга Калугина" 
-                      className="w-full h-full object-cover scale-150"
-                      style={{ objectPosition: '50% 35%' }}
+                      className="w-full h-full object-cover scale-110"
+                      style={{ objectPosition: '50% 40%' }}
                     />
                   </div>
                   <div>
@@ -183,10 +183,10 @@ const ProgramSection = () => {
                 <div className="flex flex-col items-center text-center gap-2 md:gap-3">
                   <div className="w-32 h-32 md:w-40 md:h-40 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
                     <img 
-                      src="https://cdn.poehali.dev/files/38f9ecce-0ee9-499c-b2d3-aaff7ea1fc01.jpg" 
+                      src="https://cdn.poehali.dev/projects/9f6adc22-8e89-4797-8c0b-c1ace97deedd/files/e3700967-7c71-491e-bc86-b4572673f1b5.jpg" 
                       alt="Евгения Боровцова" 
-                      className="w-full h-full object-cover scale-150"
-                      style={{ objectPosition: '50% 30%' }}
+                      className="w-full h-full object-cover scale-110"
+                      style={{ objectPosition: '50% 40%' }}
                     />
                   </div>
                   <div>
