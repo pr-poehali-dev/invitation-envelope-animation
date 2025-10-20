@@ -1,9 +1,10 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Icon from '@/components/ui/icon';
 
 const TestimonialsScroll = () => {
   const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const autoScrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const testimonialImages = [
     'https://cdn.poehali.dev/files/74ac9813-a1f3-41c5-8d28-b1fbda151969.jpg',
@@ -29,11 +30,48 @@ const TestimonialsScroll = () => {
     }
   };
 
+  const startAutoScroll = () => {
+    autoScrollIntervalRef.current = setInterval(() => {
+      if (scrollContainerRef.current) {
+        const container = scrollContainerRef.current;
+        const maxScroll = container.scrollWidth - container.clientWidth;
+        
+        if (container.scrollLeft >= maxScroll - 10) {
+          container.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          container.scrollTo({
+            left: container.scrollLeft + 300,
+            behavior: 'smooth'
+          });
+        }
+      }
+    }, 3000);
+  };
+
+  const stopAutoScroll = () => {
+    if (autoScrollIntervalRef.current) {
+      clearInterval(autoScrollIntervalRef.current);
+      autoScrollIntervalRef.current = null;
+    }
+  };
+
+  useEffect(() => {
+    startAutoScroll();
+    
+    return () => {
+      stopAutoScroll();
+    };
+  }, []);
+
   return (
     <div className="max-w-4xl mx-auto relative z-10 px-4">
       <section className="mb-12 md:mb-16 fade-in">
         <h2 className="text-3xl md:text-4xl font-black text-center mb-8 md:mb-10" style={{fontFamily: 'Playfair Display, serif'}}>ОТЗЫВЫ УЧАСТНИКОВ</h2>
-        <div className="relative group">
+        <div 
+          className="relative"
+          onMouseEnter={stopAutoScroll}
+          onMouseLeave={startAutoScroll}
+        >
           <button
             onClick={() => scroll('left')}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-[#F3E8E0] text-[#7B1E1E] p-2 md:p-3 rounded-full shadow-xl hover:scale-110 transition-all opacity-90 hover:opacity-100"
@@ -44,16 +82,20 @@ const TestimonialsScroll = () => {
           
           <div 
             ref={scrollContainerRef}
-            className="overflow-x-auto pb-4 scrollbar-hide"
+            className="overflow-x-auto pb-4"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
+            <style>{`
+              .overflow-x-auto::-webkit-scrollbar {
+                display: none;
+              }
+            `}</style>
             <div className="flex gap-3 md:gap-4 px-12">
               {testimonialImages.map((src, index) => (
                 <div 
                   key={index} 
-                  className="flex-shrink-0 w-52 md:w-60 cursor-pointer transition-transform hover:scale-110 hover:z-10"
-                  onMouseEnter={() => setEnlargedImage(src)}
-                  onMouseLeave={() => setEnlargedImage(null)}
+                  className="flex-shrink-0 w-52 md:w-60 cursor-pointer transition-transform duration-300 hover:scale-105 relative"
+                  onClick={() => setEnlargedImage(src)}
                 >
                   <img 
                     src={src} 
@@ -77,14 +119,23 @@ const TestimonialsScroll = () => {
 
       {enlargedImage && (
         <div 
-          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 cursor-pointer"
           onClick={() => setEnlargedImage(null)}
         >
-          <img 
-            src={enlargedImage} 
-            alt="Увеличенный отзыв"
-            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-          />
+          <div className="relative max-w-4xl max-h-[90vh]">
+            <img 
+              src={enlargedImage} 
+              alt="Увеличенный отзыв"
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+            />
+            <button
+              className="absolute top-4 right-4 bg-white text-black p-2 rounded-full hover:bg-gray-200 transition-colors"
+              onClick={() => setEnlargedImage(null)}
+              aria-label="Закрыть"
+            >
+              <Icon name="X" size={24} />
+            </button>
+          </div>
         </div>
       )}
     </div>
