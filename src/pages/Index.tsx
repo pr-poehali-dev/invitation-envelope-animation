@@ -8,6 +8,7 @@ import ProgramSection from '@/components/ProgramSection';
 import TestimonialsScroll from '@/components/TestimonialsScroll';
 import RegistrationSection from '@/components/RegistrationSection';
 import Footer from '@/components/Footer';
+import MatrixBackground from '@/components/MatrixBackground';
 
 const Index = () => {
   const [envelopeOpen, setEnvelopeOpen] = useState(false);
@@ -86,10 +87,7 @@ const Index = () => {
 
       {envelopeOpen && (
         <div className="animate-fade-in relative z-10 min-h-screen bg-gradient-to-br from-[#7B1E1E] via-[#5d1616] to-[#4A0F0F] text-[#F3E8E0] py-8 md:py-12">
-          <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20,50 Q30,30 40,50 T60,50 T80,50' stroke='%23F3E8E0' fill='none' stroke-width='0.5'/%3E%3Cpath d='M10,70 Q20,50 30,70 T50,70 T70,70' stroke='%23F3E8E0' fill='none' stroke-width='0.5'/%3E%3C/svg%3E")`,
-            backgroundSize: '100px 100px'
-          }}></div>
+          <MatrixBackground />
 
           <NetworkingHeader />
           <EventInfo />
