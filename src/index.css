@@ -100,6 +100,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: "Open Sans", sans-serif;
+    font-weight: 600;
   }
 
   h1,
@@ -109,6 +110,15 @@
   h5,
   h6 {
     font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+  }
+
+  p,
+  span,
+  div,
+  li,
+  a {
+    font-weight: 600;
   }
 }
 
@@ -330,6 +340,35 @@
   100% {
     background-position: 100% 100%;
   }
+}
+
+@keyframes textGradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #ff6b00,
+    #ff8c00,
+    #ffaa00,
+    #ffd700,
+    #bfff00,
+    #00ff41
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textGradientShift 4s ease-in-out infinite;
 }
 
 .kraft-page {
