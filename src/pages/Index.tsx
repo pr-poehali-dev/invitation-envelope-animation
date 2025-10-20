@@ -113,6 +113,21 @@ const Index = () => {
             }
           `}</style>
           <div id="main-content">
+            <div className="max-w-4xl mx-auto relative z-10 px-4 mb-8 md:mb-12">
+              <div className="text-center bg-[#F3E8E0]/20 backdrop-blur-sm px-4 md:px-6 py-4 rounded-lg border border-[#F3E8E0]/40">
+                <p className="text-base md:text-lg mb-3 font-semibold">Онлайн консультант</p>
+                <a 
+                  href="https://t.me/+79147050252" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#F3E8E0]/20 hover:bg-[#F3E8E0]/30 transition-all px-4 md:px-6 py-3 rounded-lg border border-[#F3E8E0]/40 hover:scale-105"
+                >
+                  <Icon name="MessageCircle" size={24} className="text-[#F3E8E0]" />
+                  <span className="text-base md:text-lg font-semibold">Написать в Telegram</span>
+                </a>
+              </div>
+            </div>
+            
             <NetworkingHeader />
             <EventInfo />
             <WhatsNotIncluded />
