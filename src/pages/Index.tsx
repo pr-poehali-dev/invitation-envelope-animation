@@ -89,9 +89,6 @@ const Index = () => {
         <div className="animate-fade-in relative z-10 min-h-screen bg-gradient-to-br from-[#7B1E1E] via-[#5d1616] to-[#4A0F0F] py-8 md:py-12">
           <MatrixBackground />
           <style>{`
-            #main-content * {
-              color: transparent !important;
-            }
             #main-content h1, 
             #main-content h2, 
             #main-content h3, 
@@ -99,18 +96,18 @@ const Index = () => {
             #main-content h5, 
             #main-content h6,
             #main-content p,
-            #main-content span:not(.lucide),
-            #main-content div,
+            #main-content span:not([class*="lucide"]),
             #main-content li,
             #main-content a,
-            #main-content button {
-              background: linear-gradient(90deg, #ff6b00, #ff8c00, #ffaa00, #ffd700, #bfff00, #00ff41) !important;
-              background-size: 200% auto !important;
-              -webkit-background-clip: text !important;
-              -webkit-text-fill-color: transparent !important;
-              background-clip: text !important;
-              animation: textGradientShift 4s ease-in-out infinite !important;
-              font-weight: 700 !important;
+            #main-content button span {
+              background: linear-gradient(90deg, #ff6b00, #ff8c00, #ffaa00, #ffd700, #bfff00, #00ff41);
+              background-size: 200% auto;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+              animation: textGradientShift 4s ease-in-out infinite;
+              font-weight: 700;
+              display: inline-block;
             }
           `}</style>
           <div id="main-content">
