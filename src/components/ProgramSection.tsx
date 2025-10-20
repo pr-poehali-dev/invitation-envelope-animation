@@ -100,7 +100,8 @@ const ProgramSection = () => {
                     <img 
                       src="https://cdn.poehali.dev/files/d416b063-f87e-439a-afbc-379ff5a454f2.jpg" 
                       alt="Оксана Литвиненко" 
-                      className="w-full h-full object-cover object-center"
+                      className="w-full h-full object-cover scale-150"
+                      style={{ objectPosition: '50% 35%' }}
                     />
                   </div>
                   <div>
