@@ -94,20 +94,22 @@ const Index = () => {
             #main-content h3, 
             #main-content h4, 
             #main-content h5, 
-            #main-content h6,
-            #main-content p,
-            #main-content span:not([class*="lucide"]),
-            #main-content li,
-            #main-content a,
-            #main-content button span {
+            #main-content h6 {
               background: linear-gradient(90deg, #ff6b00, #ff8c00, #ffaa00, #ffd700, #bfff00, #00ff41);
               background-size: 200% auto;
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
               background-clip: text;
               animation: textGradientShift 4s ease-in-out infinite;
-              font-weight: 700;
-              display: inline-block;
+              font-weight: 800;
+            }
+            
+            #main-content p,
+            #main-content span:not([class*="lucide"]):not(svg):not(path),
+            #main-content li span,
+            #main-content a {
+              color: #F3E8E0;
+              font-weight: 600;
             }
           `}</style>
           <div id="main-content">
