@@ -100,7 +100,7 @@ const ProgramSection = () => {
                     <img 
                       src="https://cdn.poehali.dev/files/d416b063-f87e-439a-afbc-379ff5a454f2.jpg" 
                       alt="Оксана Литвиненко" 
-                      className="w-full h-full object-cover object-center scale-[1.4]"
+                      className="w-full h-full object-cover object-center"
                     />
                   </div>
                   <div>
@@ -116,7 +116,7 @@ const ProgramSection = () => {
                     <img 
                       src="https://cdn.poehali.dev/files/d1d11e95-10de-430d-bf64-7b088caf294d.jpg" 
                       alt="Ирина Пашко" 
-                      className="w-full h-full object-cover object-center scale-110"
+                      className="w-full h-full object-cover object-center"
                     />
                   </div>
                   <div>
@@ -132,7 +132,7 @@ const ProgramSection = () => {
                     <img 
                       src="https://cdn.poehali.dev/files/98899be7-82bd-420b-9932-5772fab4b707.jpg" 
                       alt="Анастасия Резникова" 
-                      className="w-full h-full object-cover object-center scale-110"
+                      className="w-full h-full object-cover object-center"
                     />
                   </div>
                   <div>
@@ -148,7 +148,7 @@ const ProgramSection = () => {
                     <img 
                       src="https://cdn.poehali.dev/files/7fbdd71d-7bff-4393-9c4f-c148f2538c3f.jpg" 
                       alt="Елена Мозер" 
-                      className="w-full h-full object-cover object-center scale-110"
+                      className="w-full h-full object-cover object-center"
                     />
                   </div>
                   <div>
@@ -164,7 +164,7 @@ const ProgramSection = () => {
                     <img 
                       src="https://cdn.poehali.dev/files/3e54f4c9-9c9f-41a9-b07c-a3b54cb41c4d.jpg" 
                       alt="Ольга Калугина" 
-                      className="w-full h-full object-cover object-center scale-110"
+                      className="w-full h-full object-cover object-center"
                     />
                   </div>
                   <div>
@@ -180,7 +180,7 @@ const ProgramSection = () => {
                     <img 
                       src="https://cdn.poehali.dev/files/38f9ecce-0ee9-499c-b2d3-aaff7ea1fc01.jpg" 
                       alt="Евгения Боровцова" 
-                      className="w-full h-full object-cover object-center scale-[1.3]"
+                      className="w-full h-full object-cover object-center"
                     />
                   </div>
                   <div>
