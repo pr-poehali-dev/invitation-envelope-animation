@@ -1,6 +1,33 @@
+import { useEffect, useRef, useState } from 'react';
 import Icon from '@/components/ui/icon';
 
 const ProgramSection = () => {
+  const speakersRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (speakersRef.current) {
+      observer.observe(speakersRef.current);
+    }
+
+    return () => {
+      if (speakersRef.current) {
+        observer.unobserve(speakersRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div className="max-w-4xl mx-auto relative z-10 px-4">
       <section className="mb-12 md:mb-16" id="program">
@@ -64,10 +91,10 @@ const ProgramSection = () => {
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-lg fade-in-up">
+          <div ref={speakersRef} className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-lg fade-in-up">
             <p className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center" style={{fontFamily: 'Playfair Display, serif'}}>15:00 – 17:10</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6" style={{fontFamily: 'Lora, serif'}}>
-              <div className="fade-in-up" style={{animationDelay: '0.2s'}}>
+              <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{transitionDelay: '0ms'}}>
                 <div className="flex flex-col items-center text-center gap-2 md:gap-3">
                   <div className="w-32 h-32 md:w-40 md:h-40 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
                     <img 
@@ -83,9 +110,9 @@ const ProgramSection = () => {
                   </div>
                 </div>
               </div>
-              <div className="fade-in-up" style={{animationDelay: '0.3s'}}>
-                <div className="flex flex-col items-center text-center gap-3">
-                  <div className="w-40 h-40 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
+              <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{transitionDelay: '100ms'}}>
+                <div className="flex flex-col items-center text-center gap-2 md:gap-3">
+                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
                     <img 
                       src="https://cdn.poehali.dev/files/d1d11e95-10de-430d-bf64-7b088caf294d.jpg" 
                       alt="Ирина Пашко" 
@@ -93,15 +120,15 @@ const ProgramSection = () => {
                     />
                   </div>
                   <div>
-                    <p className="font-bold text-lg">Ирина Пашко</p>
-                    <p className="text-sm mb-2 italic opacity-80">Фотограф, контент-креатор</p>
-                    <p className="text-sm">Красивая речь и объёмный голос — основа личного бренда</p>
+                    <p className="font-bold text-base md:text-lg">Ирина Пашко</p>
+                    <p className="text-xs md:text-sm mb-1 md:mb-2 italic opacity-80">Фотограф, контент-креатор</p>
+                    <p className="text-xs md:text-sm">Красивая речь и объёмный голос — основа личного бренда</p>
                   </div>
                 </div>
               </div>
-              <div className="fade-in-up" style={{animationDelay: '0.4s'}}>
-                <div className="flex flex-col items-center text-center gap-3">
-                  <div className="w-40 h-40 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
+              <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{transitionDelay: '200ms'}}>
+                <div className="flex flex-col items-center text-center gap-2 md:gap-3">
+                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
                     <img 
                       src="https://cdn.poehali.dev/files/98899be7-82bd-420b-9932-5772fab4b707.jpg" 
                       alt="Анастасия Резникова" 
@@ -109,15 +136,15 @@ const ProgramSection = () => {
                     />
                   </div>
                   <div>
-                    <p className="font-bold text-lg">Анастасия Резникова</p>
-                    <p className="text-sm mb-2 italic opacity-80">Тренер по речи и публичным выступлениям</p>
-                    <p className="text-sm">"Кривое зеркало" — как мы видим себя и других через фильтры, которые мешают проявляться</p>
+                    <p className="font-bold text-base md:text-lg">Анастасия Резникова</p>
+                    <p className="text-xs md:text-sm mb-1 md:mb-2 italic opacity-80">Тренер по речи и публичным выступлениям</p>
+                    <p className="text-xs md:text-sm">"Кривое зеркало" — как мы видим себя и других через фильтры, которые мешают проявляться</p>
                   </div>
                 </div>
               </div>
-              <div className="fade-in-up" style={{animationDelay: '0.5s'}}>
-                <div className="flex flex-col items-center text-center gap-3">
-                  <div className="w-40 h-40 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
+              <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{transitionDelay: '300ms'}}>
+                <div className="flex flex-col items-center text-center gap-2 md:gap-3">
+                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
                     <img 
                       src="https://cdn.poehali.dev/files/7fbdd71d-7bff-4393-9c4f-c148f2538c3f.jpg" 
                       alt="Елена Мозер" 
@@ -125,52 +152,52 @@ const ProgramSection = () => {
                     />
                   </div>
                   <div>
-                    <p className="font-bold text-lg">Елена Мозер</p>
-                    <p className="text-sm mb-2 italic opacity-80">Коуч, автор трансформационных игр</p>
-                    <p className="text-sm">Переход на новый уровень дохода</p>
+                    <p className="font-bold text-base md:text-lg">Елена Мозер</p>
+                    <p className="text-xs md:text-sm mb-1 md:mb-2 italic opacity-80">Коуч, автор трансформационных игр</p>
+                    <p className="text-xs md:text-sm">Переход на новый уровень дохода</p>
                   </div>
                 </div>
               </div>
-              <div className="fade-in-up" style={{animationDelay: '0.6s'}}>
-                <div className="flex flex-col items-center text-center gap-3">
-                  <div className="w-40 h-40 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
+              <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{transitionDelay: '400ms'}}>
+                <div className="flex flex-col items-center text-center gap-2 md:gap-3">
+                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
                     <img 
-                      src="https://cdn.poehali.dev/files/b6025181-7fe7-45b8-b4ad-d68a2a7887c8.jpg" 
-                      alt="Яна Глушан" 
-                      className="w-full h-full object-cover object-center scale-125"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-bold text-lg">Яна Глушан</p>
-                    <p className="text-sm mb-2 italic opacity-80">Магистр психологии, расстановщик</p>
-                    <p className="text-sm">Как запускать осознано сарафанное радио</p>
-                  </div>
-                </div>
-              </div>
-              <div className="fade-in-up" style={{animationDelay: '0.7s'}}>
-                <div className="flex flex-col items-center text-center gap-3">
-                  <div className="w-40 h-40 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
-                    <img 
-                      src="https://cdn.poehali.dev/files/f1f4502e-6d16-4baf-8964-dcc655cc3cc7.jpg" 
-                      alt="Кристина Кузнецова" 
+                      src="https://cdn.poehali.dev/files/3e54f4c9-9c9f-41a9-b07c-a3b54cb41c4d.jpg" 
+                      alt="Ольга Калугина" 
                       className="w-full h-full object-cover object-center scale-110"
                     />
                   </div>
                   <div>
-                    <p className="font-bold text-lg">Кристина Кузнецова</p>
-                    <p className="text-sm mb-2 italic opacity-80">Эксперт по клиентскому сервису и продажам</p>
-                    <p className="text-sm">Система «ДНК Клиента»</p>
+                    <p className="font-bold text-base md:text-lg">Ольга Калугина</p>
+                    <p className="text-xs md:text-sm mb-1 md:mb-2 italic opacity-80">Юрист</p>
+                    <p className="text-xs md:text-sm">Как регистрироваться и вести дела самозанятому</p>
+                  </div>
+                </div>
+              </div>
+              <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{transitionDelay: '500ms'}}>
+                <div className="flex flex-col items-center text-center gap-2 md:gap-3">
+                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
+                    <img 
+                      src="https://cdn.poehali.dev/files/38f9ecce-0ee9-499c-b2d3-aaff7ea1fc01.jpg" 
+                      alt="Евгения Боровцова" 
+                      className="w-full h-full object-cover object-center scale-[1.3]"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-bold text-base md:text-lg">Евгения Боровцова</p>
+                    <p className="text-xs md:text-sm mb-1 md:mb-2 italic opacity-80">Клинический психолог</p>
+                    <p className="text-xs md:text-sm">Эмоциональное выгорание. Миф или реальность?</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg fade-in" style={{animationDelay: '0.2s'}}>
-            <p className="text-2xl font-bold mb-4" style={{fontFamily: 'Playfair Display, serif'}}>17:10 – 17:30</p>
-            <div className="flex items-start gap-3">
-              <Icon name="FlagCheckered" size={20} className="text-[#F3E8E0] flex-shrink-0 mt-1" fallback="Flag" />
-              <p style={{fontFamily: 'Lora, serif'}}>Финал мероприятия</p>
+          <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-lg fade-in-left" style={{animationDelay: '0.4s'}}>
+            <p className="text-xl md:text-2xl font-bold mb-3 md:mb-4" style={{fontFamily: 'Playfair Display, serif'}}>17:10 – 17:30</p>
+            <div className="flex items-start gap-2 md:gap-3">
+              <Icon name="Gift" size={18} className="text-[#F3E8E0] flex-shrink-0 mt-0.5 md:w-5 md:h-5" />
+              <p className="text-sm md:text-base" style={{fontFamily: 'Lora, serif'}}>Розыгрыш призов, завершение</p>
             </div>
           </div>
         </div>
