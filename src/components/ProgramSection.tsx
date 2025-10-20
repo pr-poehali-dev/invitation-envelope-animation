@@ -66,7 +66,7 @@ const ProgramSection = () => {
 
           <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-lg fade-in-up">
             <p className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center" style={{fontFamily: 'Playfair Display, serif'}}>15:00 – 17:10</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6" style={{fontFamily: 'Lora, serif'}}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6" style={{fontFamily: 'Lora, serif'}}>
               <div className="fade-in-up" style={{animationDelay: '0.2s'}}>
                 <div className="flex flex-col items-center text-center gap-2 md:gap-3">
                   <div className="w-32 h-32 md:w-40 md:h-40 rounded-full speaker-photo-glow overflow-hidden flex items-center justify-center">
